@@ -37,3 +37,9 @@ class QuestionForm(FlaskForm):
 class AnswerForm(FlaskForm):
     content = StringField(validators=[DataRequired()])
     question_id = IntegerField(validators=[DataRequired()])
+
+
+class CommentForm(FlaskForm):
+    content = StringField(validators=[DataRequired()])
+    score = IntegerField(validators=[DataRequired()])
+    answer_id = IntegerField(validators=[DataRequired()])
