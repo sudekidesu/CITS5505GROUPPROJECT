@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from app import db
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
@@ -5,6 +7,7 @@ from app import login
 
 
 class User(db.Model):
+    __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
@@ -23,3 +26,46 @@ class User(db.Model):
 @login.user_loader
 def load_user(id):
     return db.session.get(User, int(id))
+
+
+class Question(db.Model):
+    __tablename__ = "question"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    create_time = db.Column(db.DateTime, default=datetime.now)
+
+    # 外键
+    author_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    author = db.relationship(User, backref="questions")
+
+
+class Answer(db.Model):
+    __tablename__ = "answer"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    content = db.Column(db.Text, nullable=False)
+    create_time = db.Column(db.DateTime, default=datetime.now)
+
+    # 外键
+    question_id = db.Column(db.Integer, db.ForeignKey("question.id"))
+    author_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+
+    # 关系
+    question = db.relationship(Question, backref=db.backref("answers", order_by=create_time.desc()))
+    author = db.relationship(User, backref="answers")
+
+
+class Comment(db.Model):
+    __tablename__ = "comment"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    content = db.Column(db.Text, nullable=False)
+    score = db.Column(db.Integer)
+    create_time = db.Column(db.DateTime, default=datetime.now)
+
+    # 外键
+    answer_id = db.Column(db.Integer, db.ForeignKey("comment.id"))
+    author_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+
+    # 关系
+    answer = db.relationship(Answer, backref=db.backref("comments", order_by=create_time.desc()))
+    author = db.relationship(User, backref="comments")
