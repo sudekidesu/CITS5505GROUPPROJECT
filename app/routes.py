@@ -1,9 +1,11 @@
-from flask import redirect, url_for, flash, render_template
+from flask import redirect, url_for, flash, render_template, request, session
 from flask_login import current_user, login_user
 import sqlalchemy as sa
+from werkzeug.security import generate_password_hash
+
 from app import db
 from app import app
-from app.forms import LoginForm
+from app.forms import LoginForm, RegisterForm
 from app.models import User
 
 
@@ -23,7 +25,7 @@ def login():
     return render_template('login.html', title='Sign In', form=form)
 
 
-@bp.route("/register", methods=['GET', 'POST'])
+@app.route("/register", methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
         return render_template("register.html")
@@ -42,3 +44,9 @@ def register():
         else:
             print(form.errors)
             return redirect(url_for("auth.register"))
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
