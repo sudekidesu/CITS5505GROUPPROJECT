@@ -15,16 +15,19 @@ def index():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if current_user.is_authenticated:
+    if request.method == 'GET':
+        return render_template("login.html")
+    else:
+        if current_user.is_authenticated:
+            return redirect(url_for('index'))
+        form = LoginForm()
+        user = db.session.scalar(
+            sa.select(User).where(User.username == form.username.data))
+        if user is None or not user.check_password(form.password.data):
+            flash('Invalid username or password')
+            return redirect(url_for('login'))
+        login_user(user)
         return redirect(url_for('index'))
-    form = LoginForm()
-    user = db.session.scalar(
-        sa.select(User).where(User.username == form.username.data))
-    if user is None or not user.check_password(form.password.data):
-        flash('Invalid username or password')
-        return redirect(url_for('login'))
-    login_user(user)
-    return redirect(url_for('index'))
 
 
 @app.route("/register", methods=['GET', 'POST'])

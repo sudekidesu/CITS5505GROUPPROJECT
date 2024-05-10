@@ -1,5 +1,5 @@
 from datetime import datetime
-
+from flask_login import UserMixin
 from flask_login import LoginManager
 
 from app import db, app
@@ -9,7 +9,7 @@ from werkzeug.security import check_password_hash
 
 login = LoginManager(app)
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
