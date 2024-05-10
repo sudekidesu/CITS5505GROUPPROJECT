@@ -87,7 +87,7 @@ def public_question():
 @app.route("/qa/detail/<qa_id>")
 def qa_detail(qa_id):
     question = Question.query.get(qa_id)
-    return render_template("detail.html", question=question)
+    return render_template("question.html", question=question)
 
 @app.post("/answer/public")
 @login_required
@@ -96,14 +96,29 @@ def public_answer():
     if form.validate():
         content = form.content.data
         question_id = form.question_id.data
-        answer = Answer(content=content, question_id=question_id, author_id=g.user.id)
+        answer = Answer(content=content, question_id=question_id, author_id=g._login_user.id)
         db.session.add(answer)
         db.session.commit()
-        return redirect(url_for("qa.qa_detail", qa_id=question_id))
+        return redirect(url_for("qa_detail", qa_id=question_id))
     else:
         print(form.errors)
-        return redirect(url_for("qa.qa_detail", qa_id=request.form.get("question_id")))
+        return redirect(url_for("qa_detail", qa_id=request.form.get("question_id")))
 
+@app.post("/comment/public")
+@login_required
+def public_comment():
+    form = CommentForm(request.form)
+    if form.validate():
+        question_id = form.question_id.data
+        content = form.content.data
+        answer_id = form.answer_id.data
+        comment = Answer(content=content, answer_id=answer_id, author_id=g._login_user.id)
+        db.session.add(comment)
+        db.session.commit()
+        return redirect(url_for("qa_detail", qa_id=question_id))
+    else:
+        print(form.errors)
+        return redirect(url_for("qa_detail", qa_id=request.form.get("question_id")))
 
 @app.route("/search")
 def search():
@@ -114,19 +129,3 @@ def search():
     questions = Question.query.filter(Question.title.contains(q)).all()
     return render_template("index.html", questions=questions)
 
-
-@app.post("/comment/public")
-@login_required
-def public_comment():
-    form = CommentForm(request.form)
-    if form.validate():
-        content = form.content.data
-        score = form.score.data
-        answer_id = form.answer_id.data
-        comment = Answer(content=content, answer_id=answer_id, score=score, author_id=g.user.id)
-        db.session.add(comment)
-        db.session.commit()
-        return redirect(url_for("qa.ans_detail", ans_id=answer_id))
-    else:
-        print(form.errors)
-        return redirect(url_for("qa.ans_detail", ans_id=request.form.get("answer_id")))

@@ -66,10 +66,10 @@ class Comment(db.Model):
     create_time = db.Column(db.DateTime, default=datetime.now)
 
     # 外键
-    answer_id = db.Column(db.Integer, db.ForeignKey("comment.id"))
+    answer_id = db.Column(db.Integer, db.ForeignKey("answer.id"))
     author_id = db.Column(db.Integer, db.ForeignKey("user.id"))
 
     # # 关系
-    # answer = db.relationship(Answer, backref=db.backref("comments", order_by=create_time.desc()))
-    # author = db.relationship(User, backref="comments")
+    answer = db.relationship(Answer, backref=db.backref("comments", order_by=create_time.desc()))
+    author = db.relationship(User, backref="comments")
 
