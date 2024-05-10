@@ -1,10 +1,13 @@
 from datetime import datetime
 
-from app import db
+from flask_login import LoginManager
+
+from app import db, app
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
-from app import login
+# from app import login
 
+login = LoginManager(app)
 
 class User(db.Model):
     __tablename__ = "user"
@@ -66,6 +69,7 @@ class Comment(db.Model):
     answer_id = db.Column(db.Integer, db.ForeignKey("comment.id"))
     author_id = db.Column(db.Integer, db.ForeignKey("user.id"))
 
-    # 关系
-    answer = db.relationship(Answer, backref=db.backref("comments", order_by=create_time.desc()))
-    author = db.relationship(User, backref="comments")
+    # # 关系
+    # answer = db.relationship(Answer, backref=db.backref("comments", order_by=create_time.desc()))
+    # author = db.relationship(User, backref="comments")
+

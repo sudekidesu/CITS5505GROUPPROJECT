@@ -6,16 +6,13 @@ from app.models import User
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    remember_me = BooleanField('Remember Me')
-    submit = SubmitField('Sign In')
+    username = StringField('username', validators=[DataRequired()])
+    password = PasswordField('password', validators=[DataRequired()])
 
 
 # Form：主要就是用来验证前端提交的数据是否符合要求
 class RegisterForm(FlaskForm):
     email = StringField(validators=[Email()])
-    captcha = StringField(validators=[Length(min=4, max=4)])
     username = StringField(validators=[Length(min=3, max=20)])
     password = StringField(validators=[Length(min=6, max=20)])
     password_confirm = StringField(validators=[EqualTo("password")])

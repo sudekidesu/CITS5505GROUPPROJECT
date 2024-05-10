@@ -1,5 +1,5 @@
 from flask import redirect, url_for, flash, render_template, request, session, g
-from flask_login import current_user, login_user, login_required
+from flask_login import current_user, login_user, login_required, LoginManager
 import sqlalchemy as sa
 from werkzeug.security import generate_password_hash
 
@@ -9,20 +9,22 @@ from app.forms import LoginForm, RegisterForm, QuestionForm, AnswerForm, Comment
 from app.models import User, Question, Answer
 
 
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    return render_template('index.html')
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     form = LoginForm()
-    if form.validate_on_submit():
-        user = db.session.scalar(
-            sa.select(User).where(User.username == form.username.data))
-        if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password')
-            return redirect(url_for('login'))
-        login_user(user, remember=form.remember_me.data)
-        return redirect(url_for('index'))
-    return render_template('login.html', title='Sign In', form=form)
+    user = db.session.scalar(
+        sa.select(User).where(User.username == form.username.data))
+    if user is None or not user.check_password(form.password.data):
+        flash('Invalid username or password')
+        return redirect(url_for('login'))
+    login_user(user)
+    return redirect(url_for('index'))
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -33,17 +35,13 @@ def register():
         # 验证用户提交的邮箱和验证码是否对应且正确
         # 表单验证：flask-wtf: wtforms
         form = RegisterForm(request.form)
-        if form.validate():
-            email = form.email.data
-            username = form.username.data
-            password = form.password.data
-            user = User(email=email, username=username, password=generate_password_hash(password))
-            db.session.add(user)
-            db.session.commit()
-            return redirect(url_for("auth.login"))
-        else:
-            print(form.errors)
-            return redirect(url_for("auth.register"))
+        email = form.email.data
+        username = form.username.data
+        password = form.password.data
+        user = User(email=email, username=username, password_hash=generate_password_hash(password))
+        db.session.add(user)
+        db.session.commit()
+        return redirect(url_for("login"))
 
 
 @app.route("/logout")
