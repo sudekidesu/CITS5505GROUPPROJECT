@@ -11,7 +11,7 @@
     <meta name="robots" content="index, nofollow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
-    <title>Ask Me</title>
+    <title>UWA IT Forum</title>
     <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
@@ -30,14 +30,14 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                    <a class="navbar-brand" href="#"><img src="image/logo.png" alt="Logo"></a>
+                    <a class="navbar-brand" href=""><img src="{{ url_for('static', filename='image/logo.png') }}" alt="Logo"></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav"> </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">Home</a></li>
-                        <li><a href="ask_question.html">Ask Question</a></li>
+                        <li><a href="/ask">Ask Question</a></li>
                         <li><a href="/login">Login</a></li>
                     </ul>
                 </div>
@@ -56,7 +56,7 @@
                 <p>Here you will be able to search for any post that interests you and interact with the person who posted it. In addition, you can also post any questions to ask for help from others.
                     <br> Hope you can have a good experience here!</p>
                 <div class="button0239-item">
-                    <a href="About_us.html">
+                    <a href="/about">
                         <button type="button" class="aboutus022">About Us</button>
                     </a>
                     <!-- <a href="logIn.html">
@@ -101,24 +101,20 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">How Did You Hear About This Position?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Wouldn’t it be great if you knew exactly what questions a hiring manager would be asking you in your next job interview?
-
-                                                    We can’t read minds, unfortunately, but we’ll give you the next best thing: a list of more than 40 of the most commonly asked interview questions, along with advice for answering them all.
-                                                    
-                                                    While we don’t recommend having a canned response for every interview question (in fact, please don’t), we do recommend spending some time getting comfortable with what you might be asked, what hiring managers are really looking for in your responses, and what it takes to show that you’re the right person for the job.</p>
+                                                <p> </p>
                                             </div>
-                                            <hr>
+                                            <!-- <hr> -->
                                             <div class="ques-icon-info3293"> 
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  
+                                                <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> </i></a> 
+                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> </i></a>   -->
                                             </div>
                                         </div>
                                     </div>
@@ -133,21 +129,21 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> 
                                            
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">Why Do You Want to Work at This Company?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                <p> </p>
                                             </div>
                                             <hr>
                                             <div class="ques-icon-info3293">
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                                <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
                                             </div>
                                         </div>
                                     </div>
@@ -167,23 +163,23 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">Why Do You Want This Job?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                <p> </p>
                                             </div>
                                             <hr>
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                                <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -205,23 +201,22 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> 
                                             <!-- </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">Why Should We Hire You?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                <p> </p>
                                             </div>
                                             <hr>
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a>
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                                
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -243,23 +238,23 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Can You Bring to the Company?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                <p> </p>
                                             </div>
                                             <hr>
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                                <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -281,23 +276,23 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Are Your Greatest Strengths?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                <p> </p>
                                             </div>
                                             <hr>
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                                <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -319,23 +314,23 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> 
                                             <!-- </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Do You Consider to Be Your Weaknesses?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                <p> </p>
                                             </div>
                                             <hr>
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                                <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -357,23 +352,23 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                <p> </p>
                                             </div>
                                             <hr>
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                                <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -395,23 +390,23 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                <p> </p>
                                             </div>
                                             <hr>
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                                <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -433,23 +428,23 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                <p> </p>
                                             </div>
                                             <hr>
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                                <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -490,742 +485,782 @@
                         <!--  End of content-1------>
                         
                         <section id="content2">
-                           <!--Most Response Content Section -->
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">Coronavirus disease (COVID-19)</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                           <div class="ques-icon-info3293">
-                                            
-                                                <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"> solved</i></a> 
-                                                <a href="#"><i class="fa fa-star" aria-hidden="true"> 5</i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-comment" aria-hidden="true">  5 answer</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </a>  -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!--Recent Question Content Section -->
+                         <div class="question-type2033">
+                             <div class="row">
+                                 <div class="col-md-1">
+                                     <div class="left-user12923 left-user12923-repeat">
+                                         <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
+                                     </div>
+                                 </div>
+                                 <div class="col-md-9">
+                                     <div class="right-description893">
+                                         <div id="que-hedder2983">
+                                             <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                         <div class="ques-details10018">
+                                             <p> </p>
+                                         </div>
+                                         <!-- <hr> -->
+                                         <div class="ques-icon-info3293"> 
+                                             <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> </i></a> 
+                                             <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> </i></a>   -->
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-2">
+                                     <div class="ques-type302">
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
 
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Can You Bring to the Company?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         <div class="question-type2033">
+                             <div class="row">
+                                 <div class="col-md-1">
+                                     <div class="left-user12923 left-user12923-repeat">
+                                         <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> 
+                                        
+                                     </div>
+                                 </div>
+                                 <div class="col-md-9">
+                                     <div class="right-description893">
+                                         <div id="que-hedder2983">
+                                             <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                         <div class="ques-details10018">
+                                             <p> </p>
+                                         </div>
+                                         <hr>
+                                         <div class="ques-icon-info3293">
+                                             <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                             <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-2">
+                                     <div class="ques-type302">
+                                         <!-- <a href="#">
+                                             <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                         </a>
+                                         <a href="#">
+                                             <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                         </a> -->
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="question-type2033">
+                             <div class="row">
+                                 <div class="col-md-1">
+                                     <div class="left-user12923 left-user12923-repeat">
+                                         <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
+                                         <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                     </div>
+                                 </div>
+                                 <div class="col-md-9">
+                                     <div class="right-description893">
+                                         <div id="que-hedder2983">
+                                             <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                         <div class="ques-details10018">
+                                             <p> </p>
+                                         </div>
+                                         <hr>
+                                         <div class="ques-icon-info3293"> 
+                                             <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                             <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                             <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-2">
+                                     <div class="ques-type302">
+                                         <!-- <a href="#">
+                                             <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                         </a>
+                                         <a href="#">
+                                             <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                         </a> -->
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
 
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Are Your Greatest Strengths?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         <div class="question-type2033">
+                             <div class="row">
+                                 <div class="col-md-1">
+                                     <div class="left-user12923 left-user12923-repeat">
+                                         <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> 
+                                         <!-- </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                     </div>
+                                 </div>
+                                 <div class="col-md-9">
+                                     <div class="right-description893">
+                                         <div id="que-hedder2983">
+                                             <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                         <div class="ques-details10018">
+                                             <p> </p>
+                                         </div>
+                                         <hr>
+                                         <div class="ques-icon-info3293"> 
+                                             <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a>
+                                             <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                             
+                                             <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-2">
+                                     <div class="ques-type302">
+                                         <!-- <a href="#">
+                                             <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                         </a>
+                                         <a href="#">
+                                             <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                         </a> -->
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
 
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Do You Consider to Be Your Weaknesses?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         <div class="question-type2033">
+                             <div class="row">
+                                 <div class="col-md-1">
+                                     <div class="left-user12923 left-user12923-repeat">
+                                         <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
+                                         <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                     </div>
+                                 </div>
+                                 <div class="col-md-9">
+                                     <div class="right-description893">
+                                         <div id="que-hedder2983">
+                                             <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                         <div class="ques-details10018">
+                                             <p> </p>
+                                         </div>
+                                         <hr>
+                                         <div class="ques-icon-info3293"> 
+                                             <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                             <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                             <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-2">
+                                     <div class="ques-type302">
+                                         <!-- <a href="#">
+                                             <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                         </a>
+                                         <a href="#">
+                                             <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                         </a> -->
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
 
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         <div class="question-type2033">
+                             <div class="row">
+                                 <div class="col-md-1">
+                                     <div class="left-user12923 left-user12923-repeat">
+                                         <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
+                                         <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                     </div>
+                                 </div>
+                                 <div class="col-md-9">
+                                     <div class="right-description893">
+                                         <div id="que-hedder2983">
+                                             <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                         <div class="ques-details10018">
+                                             <p> </p>
+                                         </div>
+                                         <hr>
+                                         <div class="ques-icon-info3293"> 
+                                             <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                             <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                             <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-2">
+                                     <div class="ques-type302">
+                                         <!-- <a href="#">
+                                             <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                         </a>
+                                         <a href="#">
+                                             <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                         </a> -->
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
 
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> 
-                                            <!-- </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Can You Bring to the Company?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         <div class="question-type2033">
+                             <div class="row">
+                                 <div class="col-md-1">
+                                     <div class="left-user12923 left-user12923-repeat">
+                                         <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> 
+                                         <!-- </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                     </div>
+                                 </div>
+                                 <div class="col-md-9">
+                                     <div class="right-description893">
+                                         <div id="que-hedder2983">
+                                             <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                         <div class="ques-details10018">
+                                             <p> </p>
+                                         </div>
+                                         <hr>
+                                         <div class="ques-icon-info3293"> 
+                                             <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                             <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                             <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-2">
+                                     <div class="ques-type302">
+                                         <!-- <a href="#">
+                                             <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                         </a>
+                                         <a href="#">
+                                             <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                         </a> -->
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
 
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> 
-                                            <!-- </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Are Your Greatest Strengths?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         <div class="question-type2033">
+                             <div class="row">
+                                 <div class="col-md-1">
+                                     <div class="left-user12923 left-user12923-repeat">
+                                         <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
+                                         <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                     </div>
+                                 </div>
+                                 <div class="col-md-9">
+                                     <div class="right-description893">
+                                         <div id="que-hedder2983">
+                                             <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                         <div class="ques-details10018">
+                                             <p> </p>
+                                         </div>
+                                         <hr>
+                                         <div class="ques-icon-info3293"> 
+                                             <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                             <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                             <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-2">
+                                     <div class="ques-type302">
+                                         <!-- <a href="#">
+                                             <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                         </a>
+                                         <a href="#">
+                                             <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                         </a> -->
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
 
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Do You Consider to Be Your Weaknesses?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         <div class="question-type2033">
+                             <div class="row">
+                                 <div class="col-md-1">
+                                     <div class="left-user12923 left-user12923-repeat">
+                                         <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
+                                         <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                     </div>
+                                 </div>
+                                 <div class="col-md-9">
+                                     <div class="right-description893">
+                                         <div id="que-hedder2983">
+                                             <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                         <div class="ques-details10018">
+                                             <p> </p>
+                                         </div>
+                                         <hr>
+                                         <div class="ques-icon-info3293"> 
+                                             <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                             <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                             <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-2">
+                                     <div class="ques-type302">
+                                         <!-- <a href="#">
+                                             <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                         </a>
+                                         <a href="#">
+                                             <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                         </a> -->
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
 
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination">
-                                  <li>
-                                    <a href="#" aria-label="Previous">
-                                      <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                  </li>
-                                  <li><a href="#">1</a></li>
-                                  <li><a href="#">2</a></li>
-                                  <li><a href="#">3</a></li>
-                                  <li><a href="#">4</a></li>
-                                  <li><a href="#">5</a></li>
-                                  <li>
-                                    <a href="#" aria-label="Next">
-                                      <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                  </li>
-                                </ul>
-                              </nav>                        
-                        </section>
+                         <div class="question-type2033">
+                             <div class="row">
+                                 <div class="col-md-1">
+                                     <div class="left-user12923 left-user12923-repeat">
+                                         <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
+                                         <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                     </div>
+                                 </div>
+                                 <div class="col-md-9">
+                                     <div class="right-description893">
+                                         <div id="que-hedder2983">
+                                             <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                         <div class="ques-details10018">
+                                             <p> </p>
+                                         </div>
+                                         <hr>
+                                         <div class="ques-icon-info3293"> 
+                                             <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                             <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                             <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                             <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="col-md-2">
+                                     <div class="ques-type302">
+                                         <!-- <a href="#">
+                                             <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                         </a>
+                                         <a href="#">
+                                             <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                         </a> -->
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         
+                         <nav aria-label="Page navigation">
+                             <ul class="pagination">
+                               <li>
+                                 <a href="#" aria-label="Previous">
+                                   <span aria-hidden="true">&laquo;</span>
+                                 </a>
+                               </li>
+                               <li><a href="#">1</a></li>
+                               <li><a href="#">2</a></li>
+                               <li><a href="#">3</a></li>
+                               <li><a href="#">4</a></li>
+                               <li><a href="#">5</a></li>
+                               <li>
+                                 <a href="#" aria-label="Next">
+                                   <span aria-hidden="true">&raquo;</span>
+                                 </a>
+                               </li>
+                             </ul>
+                         </nav>
+                     </section>
                         
                         <!----end of content-2----->
                         
-                        <section id="content3">
-                              <!--Recently answered Content Section -->
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
+                    <section id="content3">
+                        <!--Recent Question Content Section -->
+                        <div class="question-type2033">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="left-user12923 left-user12923-repeat">
+                                        <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                     </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                           <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"> solved</i></a> 
-                                                <a href="#"><i class="fa fa-star" aria-hidden="true"> 5</i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-comment" aria-hidden="true">  5 answer</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </a>  -->
-                                            </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="right-description893">
+                                        <div id="que-hedder2983">
+                                            <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                        <div class="ques-details10018">
+                                            <p> </p>
                                         </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
+                                        <!-- <hr> -->
+                                        <div class="ques-icon-info3293"> 
+                                            <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> </i></a> 
+                                            <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> </i></a>   -->
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
-                              
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> 
-                                            </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-check check-color329" aria-hidden="true"> solved</i></a> 
-                                                <a href="#"><i class="fa fa-star" aria-hidden="true"> 5</i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-comment" aria-hidden="true">  5 answer</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </a>  -->
-                                            </div>
-                                        <div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Can You Bring to the Company?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a>
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
+                                <div class="col-md-2">
+                                    <div class="ques-type302">
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
+                        <div class="question-type2033">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="left-user12923 left-user12923-repeat">
+                                        <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> 
+                                    
                                     </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Are Your Greatest Strengths?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="right-description893">
+                                        <div id="que-hedder2983">
+                                            <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                        <div class="ques-details10018">
+                                            <p> </p>
                                         </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
+                                        <hr>
+                                        <div class="ques-icon-info3293">
+                                            <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                            <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Do You Consider to Be Your Weaknesses?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a>
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
+                                <div class="col-md-2">
+                                    <div class="ques-type302">
+                                        <!-- <a href="#">
+                                            <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                        </a>
+                                        <a href="#">
+                                            <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                        </a> -->
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
+                        </div>
+                        <div class="question-type2033">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="left-user12923 left-user12923-repeat">
+                                        <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
+                                        <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                     </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="right-description893">
+                                        <div id="que-hedder2983">
+                                            <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                        <div class="ques-details10018">
+                                            <p> </p>
                                         </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
+                                        <hr>
+                                        <div class="ques-icon-info3293"> 
+                                            <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                            <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                            <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Can You Bring to the Company?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
+                                <div class="col-md-2">
+                                    <div class="ques-type302">
+                                        <!-- <a href="#">
+                                            <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                        </a>
+                                        <a href="#">
+                                            <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                        </a> -->
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
+                        <div class="question-type2033">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="left-user12923 left-user12923-repeat">
+                                        <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> 
+                                        <!-- </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                     </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Are Your Greatest Strengths?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="right-description893">
+                                        <div id="que-hedder2983">
+                                            <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                        <div class="ques-details10018">
+                                            <p> </p>
                                         </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
+                                        <hr>
+                                        <div class="ques-icon-info3293"> 
+                                            <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a>
+                                            <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                            
+                                            <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
-                                            <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Do You Consider to Be Your Weaknesses?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> 
-                                                <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
-                                                <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
-                                                <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
+                                <div class="col-md-2">
+                                    <div class="ques-type302">
+                                        <!-- <a href="#">
+                                            <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                        </a>
+                                        <a href="#">
+                                            <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                        </a> -->
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination">
-                                  <li>
-                                    <a href="#" aria-label="Previous">
-                                      <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                  </li>
-                                  <li><a href="#">1</a></li>
-                                  <li><a href="#">2</a></li>
-                                  <li><a href="#">3</a></li>
-                                  <li><a href="#">4</a></li>
-                                  <li><a href="#">5</a></li>
-                                  <li>
-                                    <a href="#" aria-label="Next">
-                                      <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                  </li>
-                                </ul>
-                              </nav>
-                        </section>
-                        <!--End content-3 -->
+                        <div class="question-type2033">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="left-user12923 left-user12923-repeat">
+                                        <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
+                                        <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="right-description893">
+                                        <div id="que-hedder2983">
+                                            <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                        <div class="ques-details10018">
+                                            <p> </p>
+                                        </div>
+                                        <hr>
+                                        <div class="ques-icon-info3293"> 
+                                            <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                            <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                            <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="ques-type302">
+                                        <!-- <a href="#">
+                                            <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                        </a>
+                                        <a href="#">
+                                            <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                        </a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-type2033">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="left-user12923 left-user12923-repeat">
+                                        <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
+                                        <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="right-description893">
+                                        <div id="que-hedder2983">
+                                            <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                        <div class="ques-details10018">
+                                            <p> </p>
+                                        </div>
+                                        <hr>
+                                        <div class="ques-icon-info3293"> 
+                                            <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                            <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                            <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="ques-type302">
+                                        <!-- <a href="#">
+                                            <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                        </a>
+                                        <a href="#">
+                                            <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                        </a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-type2033">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="left-user12923 left-user12923-repeat">
+                                        <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> 
+                                        <!-- </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="right-description893">
+                                        <div id="que-hedder2983">
+                                            <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                        <div class="ques-details10018">
+                                            <p> </p>
+                                        </div>
+                                        <hr>
+                                        <div class="ques-icon-info3293"> 
+                                            <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                            <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                            <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="ques-type302">
+                                        <!-- <a href="#">
+                                            <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                        </a>
+                                        <a href="#">
+                                            <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                        </a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-type2033">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="left-user12923 left-user12923-repeat">
+                                        <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
+                                        <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="right-description893">
+                                        <div id="que-hedder2983">
+                                            <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                        <div class="ques-details10018">
+                                            <p> </p>
+                                        </div>
+                                        <hr>
+                                        <div class="ques-icon-info3293"> 
+                                            <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                            <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                            <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="ques-type302">
+                                        <!-- <a href="#">
+                                            <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                        </a>
+                                        <a href="#">
+                                            <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                        </a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-type2033">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="left-user12923 left-user12923-repeat">
+                                        <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
+                                        <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="right-description893">
+                                        <div id="que-hedder2983">
+                                            <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                        <div class="ques-details10018">
+                                            <p> </p>
+                                        </div>
+                                        <hr>
+                                        <div class="ques-icon-info3293"> 
+                                            <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                            <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                            <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="ques-type302">
+                                        <!-- <a href="#">
+                                            <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                        </a>
+                                        <a href="#">
+                                            <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                        </a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-type2033">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="left-user12923 left-user12923-repeat">
+                                        <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
+                                        <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="right-description893">
+                                        <div id="que-hedder2983">
+                                            <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
+                                        <div class="ques-details10018">
+                                            <p> </p>
+                                        </div>
+                                        <hr>
+                                        <div class="ques-icon-info3293"> 
+                                            <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
+                                            <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
+                                            <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a>  -->
+                                            <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="ques-type302">
+                                        <!-- <a href="#">
+                                            <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                        </a>
+                                        <a href="#">
+                                            <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                        </a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            </ul>
+                        </nav>
+                    </section>
                         
                     
                                  <section id="content4">
@@ -1234,24 +1269,23 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                               
                                             </div>
-                                            <hr>
+                                           
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-check check-color329" aria-hidden="true"> solved</i></a> 
                                                 <a href="#"><i class="fa fa-star" aria-hidden="true"> 5</i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-comment" aria-hidden="true">  5 answer</i></a>
+                                                
                                                 <!-- <a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </a>  -->
                                             </div>
                                         </div>
@@ -1273,23 +1307,22 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Can You Bring to the Company?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                
                                             </div>
-                                            <hr>
+
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                                
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -1311,23 +1344,22 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Are Your Greatest Strengths?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                               
                                             </div>
-                                            <hr>
+
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                               
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -1349,23 +1381,22 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Do You Consider to Be Your Weaknesses?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                
                                             </div>
-                                            <hr>
+
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                               
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -1387,23 +1418,22 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                
                                             </div>
                                             <hr>
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                               
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -1425,23 +1455,22 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Can You Bring to the Company?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                
                                             </div>
                                             <hr>
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                               
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -1463,23 +1492,22 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Are Your Greatest Strengths?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                
                                             </div>
-                                            <hr>
+
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                                
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -1501,23 +1529,22 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Do You Consider to Be Your Weaknesses?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                
                                             </div>
-                                            <hr>
+
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                               
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -1539,23 +1566,22 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>  -->
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                
                                             </div>
-                                            <hr>
+
                                             <div class="ques-icon-info3293"> 
                                                 <!-- <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> 
                                                 <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a>  -->
-                                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> 
-                                                <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> 
+                                               
                                                 <!-- <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a>  -->
                                             </div>
                                         </div>
@@ -1601,18 +1627,18 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> 
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> 
                                             <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> 
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                                
                                             </div>
-                                            <hr>
+
                                             <div class="ques-icon-info3293"> <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a> <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a> </div>
                                         </div>
                                     </div>
@@ -1632,17 +1658,17 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Can You Bring to the Company?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                               
                                             </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a> <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a> </div>
+
+                                           
                                         </div>
                                     </div>
                                     <div class="col-md-2">
@@ -1661,16 +1687,16 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Are Your Greatest Strengths?</a></h3> </div>
+                                                <h3><a href="post-deatils.html" target="_blank"> </a></h3> </div>
                                             <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                              
                                             </div>
-                                            <hr>
+
                                             <div class="ques-icon-info3293"> <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a> <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a> </div>
                                         </div>
                                     </div>
@@ -1690,123 +1716,7 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Do You Consider to Be Your Weaknesses?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a> <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a> <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Can You Bring to the Company?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a> <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="right-description893">
-                                            <div id="que-hedder2983">
-                                                <h3><a href="post-deatils.html" target="_blank">What Are Your Greatest Strengths?</a></h3> </div>
-                                            <div class="ques-details10018">
-                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
-                                            </div>
-                                            <hr>
-                                            <div class="ques-icon-info3293"> <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a> <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="ques-type302">
-                                            <!-- <a href="#">
-                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
-                                            </a>
-                                            <a href="#">
-                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
-                                            </a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="question-type2033">
-                                <div class="row">
-                                    <div class="col-md-1">
-                                        <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
@@ -1835,7 +1745,123 @@
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
-                                            <a href="#"><img src="image/images.png" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="right-description893">
+                                            <div id="que-hedder2983">
+                                                <h3><a href="post-deatils.html" target="_blank">This is my first Question</a></h3> </div>
+                                            <div class="ques-details10018">
+                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                            </div>
+                                            <hr>
+                                            <div class="ques-icon-info3293"> <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a> <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="ques-type302">
+                                            <!-- <a href="#">
+                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                            </a>
+                                            <a href="#">
+                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                            </a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question-type2033">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <div class="left-user12923 left-user12923-repeat">
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="right-description893">
+                                            <div id="que-hedder2983">
+                                                <h3><a href="post-deatils.html" target="_blank">What Can You Bring to the Company?</a></h3> </div>
+                                            <div class="ques-details10018">
+                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                            </div>
+                                            <hr>
+                                            <div class="ques-icon-info3293"> <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a> <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="ques-type302">
+                                            <!-- <a href="#">
+                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                            </a>
+                                            <a href="#">
+                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                            </a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question-type2033">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <div class="left-user12923 left-user12923-repeat">
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="right-description893">
+                                            <div id="que-hedder2983">
+                                                <h3><a href="post-deatils.html" target="_blank">What Are Your Greatest Strengths?</a></h3> </div>
+                                            <div class="ques-details10018">
+                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                            </div>
+                                            <hr>
+                                            <div class="ques-icon-info3293"> <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a> <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="ques-type302">
+                                            <!-- <a href="#">
+                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                            </a>
+                                            <a href="#">
+                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                            </a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question-type2033">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <div class="left-user12923 left-user12923-repeat">
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="right-description893">
+                                            <div id="que-hedder2983">
+                                                <h3><a href="post-deatils.html" target="_blank">What Do You Consider to Be Your Weaknesses?</a></h3> </div>
+                                            <div class="ques-details10018">
+                                                <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis.</p>
+                                            </div>
+                                            <hr>
+                                            <div class="ques-icon-info3293"> <a href="#"><i class="fa fa-star" aria-hidden="true"> 5 </i> </a> <a href="#"><i class="fa fa-folder" aria-hidden="true"> wordpress</i></a> <a href="#"><i class="fa fa-clock-o" aria-hidden="true"> 4 min ago</i></a> <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"> Question</i></a> <a href="#"><i class="fa fa-bug" aria-hidden="true"> Report</i></a> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="ques-type302">
+                                            <!-- <a href="#">
+                                                <button type="button" class="q-type238"><i class="fa fa-comment" aria-hidden="true">  333335 answer</i></button>
+                                            </a>
+                                            <a href="#">
+                                                <button type="button" class="q-type23 button-ques2973"> <i class="fa fa-user-circle-o" aria-hidden="true"> 70 view</i> </button>
+                                            </a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question-type2033">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <div class="left-user12923 left-user12923-repeat">
+                                            <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"> </a> <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="right-description893">
@@ -1965,52 +1991,52 @@
                         <h4>Highest Points</h4>
                         <div class="pints-wrapper">
                             <div class="left-user3898">
-                                <a href="#"><img src="image/images.png" alt="Image"></a>
+                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
                                 <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
                             </div> <span class="points-details938">
-<a href="#"><h5>Ahmed Hasan</h5></a>
-<a href="#" class="designetion439">Pundit</a>
-<p>206 points</p>
+<a href="#"><h5> </h5></a>
+<a href="#" class="designetion439"> </a>
+<p> </p>
 </span> </div>
                         <hr>
                         <div class="pints-wrapper">
                             <div class="left-user3898">
-                                <a href="#"><img src="image/images.png" alt="Image"></a>
+                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
                                 <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
                             </div> <span class="points-details938">
-<a href="#"><h5>Ahmed Hasan</h5></a>
-<a href="#" class="designetion439">Pundit</a>
-<p>206 points</p>
+<a href="#"><h5> </h5></a>
+<a href="#" class="designetion439"> </a>
+<p> </p>
 </span> </div>
                         <hr>
                         <div class="pints-wrapper">
                             <div class="left-user3898">
-                                <a href="#"><img src="image/images.png" alt="Image"></a>
+                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
                                 <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
                             </div> <span class="points-details938">
-<a href="#"><h5>Ahmed Hasan</h5></a>
-<a href="#" class="designetion439">Pundit</a>
-<p>206 points</p>
+<a href="#"><h5></h5></a>
+<a href="#" class="designetion439"> </a>
+<p> </p>
 </span> </div>
                         <hr>
                         <div class="pints-wrapper">
                             <div class="left-user3898">
-                                <a href="#"><img src="image/images.png" alt="Image"></a>
+                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
                                 <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
                             </div> <span class="points-details938">
-<a href="#"><h5>Ahmed Hasan</h5></a>
-<a href="#" class="designetion439">Pundit</a>
-<p>206 points</p>
+<a href="#"><h5> </h5></a>
+<a href="#" class="designetion439"> </a>
+<p> </p>
 </span> </div>
                         <hr>
                         <div class="pints-wrapper">
                             <div class="left-user3898">
-                                <a href="#"><img src="image/images.png" alt="Image"></a>
+                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}"alt="Image"></a>
                                 <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
                             </div> <span class="points-details938">
-<a href="#"><h5>Ahmed Hasan</h5></a>
-<a href="#" class="designetion439">Pundit</a>
-<p>206 points</p>
+<a href="#"><h5> </h5></a>
+<a href="#" class="designetion439"> </a>
+<p> </p>
 </span> </div>
                     </div>
                     <!--               end of Highest points -->
@@ -2035,14 +2061,14 @@
                     <!--        start recent post  -->
                     <div class="recent-post3290">
                         <h4>Recent Post</h4>
-                        <div class="post-details021"> <a href="#"><h5>How much do web developers</h5></a>
-                            <p>I am thinking of pursuing web developing as a career & was ...</p> <small style="color: #848991">July 16, 2017</small> </div>
+                        <div class="post-details021"> <a href="#"><h5> </h5></a>
+                            <p> </p> <small style="color: #848991"> </small> </div>
                         <hr>
-                        <div class="post-details021"> <a href="#"><h5>How much do web developers</h5></a>
-                            <p>I am thinking of pursuing web developing as a career & was ...</p> <small style="color: #848991">July 16, 2017</small> </div>
+                        <div class="post-details021"> <a href="#"><h5> </h5></a>
+                            <p> </p> <small style="color: #848991"> </small> </div>
                         <hr>
-                        <div class="post-details021"> <a href="#"><h5>How much do web developers</h5></a>
-                            <p>I am thinking of pursuing web developing as a career & was ...</p> <small style="color: #848991">July 16, 2017</small> </div>
+                        <div class="post-details021"> <a href="#"><h5> </h5></a>
+                            <p> </p> <small style="color: #848991"> </small> </div>
                     </div>
                     <!--       end recent post    -->
                 </aside>
@@ -2151,9 +2177,9 @@ Themehttps://t.co/urb3LgsOCi</a></p> <small>about 2 weeks ago</small> </div>
         </div>
     </section> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/npm.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/npm.js') }}"></script>
 </body>
 
 </html>
