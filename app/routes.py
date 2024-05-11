@@ -7,7 +7,7 @@ from werkzeug.security import generate_password_hash
 
 from app import db
 from app import app
-from app.forms import LoginForm, RegisterForm, QuestionForm, AnswerForm, CommentForm, PageForm
+from app.forms import LoginForm, RegisterForm, QuestionForm, AnswerForm, CommentForm, PageForm, QalikeForm
 from app.models import User, Question, Answer
 
 
@@ -27,16 +27,18 @@ def login():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     if request.method == 'GET':
-        return render_template("login.html")
-    else:
         form = LoginForm()
+        return render_template("login.html", form=form)
+    else:
+        form = LoginForm(request.form)
         if form.validate():
             user = db.session.scalar(
                 sa.select(User).where(User.username == form.username.data))
             if user is None or not user.check_password(form.password.data):
                 flash('Invalid username or password')
                 return redirect(url_for('login'))
-            login_user(user, remember=True)
+            # login_user(user, remember=True)
+            login_user(user, remember=False)
             return redirect(url_for('index'))
         else:
             return redirect(url_for("login"))
@@ -45,7 +47,8 @@ def login():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
-        return render_template("register.html")
+        form = RegisterForm()
+        return render_template("register.html", form=form)
     else:
         # 验证用户提交的邮箱和验证码是否对应且正确
         # 表单验证：flask-wtf: wtforms
@@ -146,25 +149,31 @@ def recentqa():
     questions = Question.query.order_by(desc(Question.create_time)).paginate(page=1, per_page=num_dp)
     return questions
 
-@app.route("/like")
-def like(qa_id):
-    question = Question.query.get(qa_id)
-    if question:
-        auth_id =  question.author_id
-        author = User.query.get(auth_id)
-        question.likes += 1
-        author.likes += 1
-        db.session.commit()
-        return jsonify({'message': 'Like added', 'total_likes': question.likes}), 200
+
+@app.route("/qa/like", methods=['POST'])
+def like():
+    form = QalikeForm(request.form)
+    if form.validate():
+        question_id = form.question_id.data
+        question = Question.query.get(question_id)
+        if question:
+            auth_id = question.author_id
+            author = User.query.get(auth_id)
+            question.likes += 1
+            author.likes += 1
+            db.session.commit()
+            return jsonify({'message': 'Like added', 'total_likes': question.likes}), 200
+        else:
+            return jsonify({'message': 'Question not found'}), 404
     else:
-        return jsonify({'message': 'Question not found'}), 404
+        return jsonify({'message': 'Missing \'qa_id\''}), 404
 
 
-@app.route("/dislike")
+@app.route("/qa/dislike/<qa_id>", methods=['POST'])
 def dislike(qa_id):
     question = Question.query.get(qa_id)
     if question:
-        auth_id =  question.author_id
+        auth_id = question.author_id
         author = User.query.get(auth_id)
         if question.likes > 0:
             question.likes += 1
@@ -174,6 +183,7 @@ def dislike(qa_id):
         return jsonify({'message': 'Disliked', 'total_likes': question.likes}), 200
     else:
         return jsonify({'message': 'Question not found'}), 404
+
 
 @app.route("/board")
 def board():

@@ -29,6 +29,7 @@ class RegisterForm(FlaskForm):
 class QuestionForm(FlaskForm):
     title = StringField(validators=[DataRequired()])
     content = StringField([DataRequired()])
+    category = StringField([DataRequired()])
 
 
 class AnswerForm(FlaskForm):
@@ -46,3 +47,7 @@ class CommentForm(FlaskForm):
 class PageForm(FlaskForm):
     page = IntegerField(validators=[DataRequired()])
     per_page = IntegerField(validators=[DataRequired()])
+
+
+class QalikeForm(FlaskForm):
+    question_id = IntegerField(validators=[DataRequired()])
