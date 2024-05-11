@@ -15,6 +15,7 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(256), nullable=False)
+    likes = db.Column(db.Integer, default=0)
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
@@ -35,8 +36,10 @@ class Question(db.Model):
     __tablename__ = "question"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(100), nullable=False)
+    category = db.Column(db.String(100), nullable=False)
     content = db.Column(db.Text, nullable=False)
     create_time = db.Column(db.DateTime, default=datetime.now)
+    likes = db.Column(db.Integer)
 
     # 外键
     author_id = db.Column(db.Integer, db.ForeignKey("user.id"))
