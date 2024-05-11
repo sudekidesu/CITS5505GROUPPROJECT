@@ -19,7 +19,10 @@ def csrf_token():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    if current_user.is_authenticated:
+        return render_template('index.html', user=g._login_user)
+    else:
+        return render_template('index.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
