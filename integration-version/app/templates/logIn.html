@@ -22,7 +22,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
     />
-    <link rel="stylesheet" href="css/loginstyle.css" />
+    <link href="{{ url_for('static', filename='css/loginstyle.css') }}" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div class="modal-wrap">
@@ -35,7 +35,7 @@
             <input type="password" placeholder="Password" />
             <div class="text-center">
               <div class="button">LOG IN</div>
-              <a href="signup.html"
+              <a href="/register"
                 ><div class="button">Create an account</div></a
               >
             </div>

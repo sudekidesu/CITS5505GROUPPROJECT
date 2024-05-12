@@ -61,11 +61,13 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="post-title-left129">
-                                        <h3> </h3> </div>
+                                        <h3 id="postTitle"></h3> 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="post-details-info1982">
+                            <p id="postContent"></p >
                             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing gravida odio, sit amet suscipit risus ultrices eu. Fusce viverra neque at purus laoreet consequat. Vivamus vulputate posuere nisl quis consequat. Donec congue commodo mi, sed commodo velit fringilla ac. Fusce placerat venenatis mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras ornare, dolor a aliquet rutrum, dolor turpis condimentum leo, a semper lacus purus in felis. Quisque blandit posuere turpis, eget auctor felis pharetra eu .</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing gravida odio, sit amet suscipit risus ultrices eu. Fusce viverra neque at purus laoreet consequat. Vivamus vulputate posuere nisl quis consequat. Donec congue commodo mi, sed commodo velit fringilla ac. Fusce placerat venenatis mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras ornare, dolor a aliquet rutrum, dolor turpis condimentum leo, a semper lacus purus in felis. Quisque blandit posuere turpis, eget auctor felis pharetra eu .</p> -->
                         </div>
@@ -143,8 +145,11 @@
                             </div>
                         </div>
                     </div>
+                    <ul id="comments-list" class="comments-list"> <!-- 这里将动态添加评论 --> </ul>
                 </div>
                 <!--                end of col-md-9 -->
+
+               
 
                 <!--           strart col-md-3 (side bar)-->
                 <aside class="col-md-3 sidebar97239">
@@ -270,7 +275,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/npm.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/npm.js') }}"></script> -->
+    <script>
+        var image = "{{ url_for('static', filename='image/images.png') }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/post-details.js') }}"></script>
 </body>
 
 </html>

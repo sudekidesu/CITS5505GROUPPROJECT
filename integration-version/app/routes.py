@@ -56,7 +56,7 @@ def login():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
-        return render_template("register.html")
+        return render_template("signup.html")
     else:
         # 验证用户提交的邮箱和验证码是否对应且正确
         # 表单验证：flask-wtf: wtforms
