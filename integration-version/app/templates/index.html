@@ -95,7 +95,7 @@
                         
                         <section id="content1">
                                <!--Recent Question Content Section -->
-                            <div class="question-type2033">
+                            <!-- <div class="question-type2033">
                                 <div class="row">
                                     <div class="col-md-1">
                                         <div class="left-user12923 left-user12923-repeat">
@@ -105,7 +105,8 @@
                                     <div class="col-md-9">
                                         <div class="right-description893">
                                             <div id="que-hedder2983">
-                                                <h3><a href="/post" target="_blank"> </a></h3> </div>
+                                                <h3><a href="/post" target="_blank"> </a></h3> 
+                                            </div>
                                             <div class="ques-details10018">
                                                 <p> </p>
                                             </div>
@@ -380,7 +381,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             
                             <nav aria-label="Page navigation">
                                 <ul class="pagination">
@@ -1696,7 +1697,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/npm.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/npm.js') }}"></script> -->
+    <script>
+        var image = "{{ url_for('static', filename='image/images.png') }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/forum.js') }}"></script>
 </body>
 
 </html>
