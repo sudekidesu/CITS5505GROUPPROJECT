@@ -1,11 +1,32 @@
 document.addEventListener('DOMContentLoaded', function() {
+    function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    var postId = getParameterByName('id');  // 获取 URL 中的 id 参数
     var questions = JSON.parse(localStorage.getItem('questions')) || [];
-    var latestQuestion = questions[questions.length - 1]; // 获取最新的帖子
-    if (latestQuestion) {
-        document.getElementById('postTitle').textContent = latestQuestion.title; // 设置帖子标题
-        document.getElementById('postContent').textContent = latestQuestion.details; // 设置帖子内容
+    var question = questions.find(question => question.id && question.id.toString() === postId);  // 确保 id 存在并根据 id 找到相应的帖子
+
+    if (question) {
+        document.getElementById('postTitle').textContent = question.title;  // 设置帖子标题
+        document.getElementById('postContent').textContent = question.details;  // 设置帖子内容
+    } else {
+        document.getElementById('postTitle').textContent = 'Post not found';
+        document.getElementById('postContent').textContent = 'The requested post does not exist.';
     }
 });
+
+    console.log("Post ID from URL:", postId);
+questions.forEach(q => {
+    console.log("Checking post:", q.id, typeof q.id, postId, typeof postId);
+});
+;
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var questions = JSON.parse(localStorage.getItem('questions')) || [];
@@ -41,3 +62,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
