@@ -9,7 +9,7 @@
     <meta name="description" content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ask ideal for wiki sites, knowledge base sites, support forum sites">
     <meta name="keywords" content="HTML, CSS, JavaScript,Bootstrap,js,Forum,webstagram ,webdesign ,website ,web ,webdesigner ,webdevelopment">
     <meta name="robots" content="index, nofollow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
     <meta name="language" content="English">
     <title>Post</title>
     <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css">
@@ -50,13 +50,13 @@
     </div>
 
     <section class="header-descriptin329">
-        <div class="container" align="center">
+        <div class="container">
             <h3>Post Details</h3>
         </div>
     </section>
 
 
-    <section class="main-content920">
+    <div class="main-content920">
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
@@ -65,13 +65,13 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="post-title-left129">
-                                        <h3 id="postTitle"></h3> 
+                                        <p id="postTitle"></p> 
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="post-details-info1982">
-                            <p id="postContent"></p >
+                            <p id="postContent"></p>
                             <hr>
                             <div class="post-footer29032">
                                 <div class="l-rightside39">
@@ -86,7 +86,7 @@
                             <div class="row">
                            
                                 <div class="comments-container">
-                                    <ul id="comments-list" class="comments-list">
+                                    <ul class="comments-list">
                                         <li>
                                              <div class="comment-main-level">
                                                 <!-- Avatar -->
@@ -94,7 +94,7 @@
                                                 <!-- Contenedor del Comentario -->
                                                 <div class="comment-box">
                                                     <div class="comment-head">
-                                                        <h6 class="comment-name"><a href="#"> </a></h6> <span><i class="fa fa-clock-o" aria-hidden="true"> </i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
+                                                        <p class="comment-name"><a href="#"> </a></p> <span><i class="fa fa-clock-o" aria-hidden="true"> </i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
                                                     <div class="comment-content">  </div>
                                                 </div>
                                             </div>
@@ -105,7 +105,7 @@
                                                     <div class="comment-avatar"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"></div>
                                                     <div class="comment-box">
                                                         <div class="comment-head">
-                                                            <h6 class="comment-name"><a href="#"> </a></h6> <span><i class="fa fa-clock-o" aria-hidden="true"> January 15 , 2014 at 10:00 pm</i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
+                                                            <p class="comment-name"><a href="#"> </a></p> <span><i class="fa fa-clock-o" aria-hidden="true"> January 15 , 2014 at 10:00 pm</i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
                                                         <div class="comment-content">  </div>
                                                     </div>
                                                 </li>
@@ -113,7 +113,7 @@
                                                     <div class="comment-avatar"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"></div>
                                                     <div class="comment-box">
                                                         <div class="comment-head">
-                                                            <h6 class="comment-name"><a href="#"> </a></h6> <span><i class="fa fa-clock-o" aria-hidden="true"> </i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
+                                                            <p class="comment-name"><a href="#"> </a></p> <span><i class="fa fa-clock-o" aria-hidden="true"> </i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
                                                         <div class="comment-content">  </div>
                                                     </div>
                                                 </li>
@@ -121,7 +121,7 @@
                                                     <div class="comment-avatar"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"></div>
                                                     <div class="comment-box">
                                                         <div class="comment-head">
-                                                            <h6 class="comment-name"><a href="#"> </a></h6> <span><i class="fa fa-clock-o" aria-hidden="true"> </i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
+                                                            <p class="comment-name"><a href="#"> </a></p> <span><i class="fa fa-clock-o" aria-hidden="true"> </i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
                                                         <div class="comment-content">  </div>
                                                     </div>
                                                 </li>
@@ -134,7 +134,7 @@
                                                 <!-- Contenedor del Comentario -->
                                                 <div class="comment-box">
                                                     <div class="comment-head">
-                                                        <h6 class="comment-name"><a href="#"> </a></h6> <span><i class="fa fa-clock-o" aria-hidden="true"> January 15 , 2014 at 10:00 pm</i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
+                                                        <p class="comment-name"><a href="#"> </a></p> <span><i class="fa fa-clock-o" aria-hidden="true"> January 15 , 2014 at 10:00 pm</i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
                                                     <div class="comment-content">  </div>
                                                 </div>
                                             </div>
@@ -158,115 +158,84 @@
                             </div>
                         </div>
                     </div>
-                    <ul id="comments-list" class="comments-list"> <!-- 这里将动态添加评论 --> </ul>
+                    <ul class="comments-list"> <!-- 这里将动态添加评论 --> </ul>
                 </div>
                 <!--                end of col-md-9 -->
 
                
 
-                <!--           strart col-md-3 (side bar)-->
+                <!-- strart col-md-3 (side bar) -->
                 <aside class="col-md-3 sidebar97239">
-                    <!-- <div class="status-part3821">
-                        <h4>stats</h4> 
-                        <a href="#"><i class="fa fa-question-circle" aria-hidden="true"> Question(20)</i></a> 
-                        <i class="fa fa-comment" aria-hidden="true"> Answers(50)</i> 
-                    </div> -->
-                    <!-- <div class="categori-part329">
-                        <h4>Category</h4>
-                        <ul>
-                            <li><a href="#">web developer</a></li>
-                            <li><a href="#">Andriod developer</a></li>
-                            <li><a href="#">grapics developer</a></li>
-                            <li><a href="#">web developer</a></li>
-                        </ul>
-                    </div> -->
-
-                    <!--              highest part-->
+                    <!-- highest part -->
                     <div class="highest-part302">
                         <h4>Highest Points</h4>
                         <div class="pints-wrapper">
                             <div class="left-user3898">
                                 <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
                                 <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div> <span class="points-details938">
-                     <a href="#"><h5> </h5></a>
-                <a href="#" class="designetion439"> </a>
-                     <p> </p>
-                 </span> </div>
-                        <hr>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div> <span class="points-details938">
-                     <a href="#"><h5> </h5></a>
-                <a href="#" class="designetion439"> </a>
-                     <p> </p>
-                 </span> </div>
-                        <hr>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div> <span class="points-details938">
-                     <a href="#"><h5> </h5></a>
-                <a href="#" class="designetion439"> </a>
-                     <p> </p>
-                 </span> </div>
-                        <hr>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div> <span class="points-details938">
-                     <a href="#"><h5> </h5></a>
-                <a href="#" class="designetion439"> </a>
-                     <p> </p>
-                 </span> </div>
-                        <hr>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div> <span class="points-details938">
-                     <a href="#"><h5> </h5></a>
-                <a href="#" class="designetion439"> </a>
-                     <p> </p>
-                 </span> </div>
-                 <hr>
-                    </div>
-                    <!--               end of Highest points -->
+                            </div>
+                            <a href="#" class="designetion439"> </a>
+                            <p> </p>
+                                
+                        </div>
 
-            
-                    <!--        start recent post  -->
-                    <!-- <div class="recent-post3290">
-                        <h4>Recent Post</h4>
-                        <div class="post-details021"> <a href="#"><h5> </h5></a>
-                            <p> </p> <small style="color: #848991"> </small> </div>
                         <hr>
-                        <div class="post-details021"> <a href="#"><h5> </h5></a>
-                            <p> </p> <small style="color: #848991"> </small> </div>
+                        <div class="pints-wrapper">
+                            <div class="left-user3898">
+                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
+                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
+                            </div> 
+                            <a href="#" class="designetion439"> </a>
+                            <p> </p>
+                             
+                        </div>
+
                         <hr>
-                        <div class="post-details021"> <a href="#"><h5> </h5></a>
-                            <p> </p> <small style="color: #848991"> </small> </div>
-                    </div> -->
-                    <!--       end recent post    -->
+                        <div class="pints-wrapper">
+                            <div class="left-user3898">
+                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
+                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
+                            </div> 
+                            <a href="#" class="designetion439"> </a>
+                            <p> </p>
+                            
+                        </div>
+
+                        <hr>
+                        <div class="pints-wrapper">
+                            <div class="left-user3898">
+                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
+                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
+                            </div> 
+                            <a href="#" class="designetion439"> </a>
+                            <p> </p>
+                           
+                        </div>
+
+                        <hr>
+                        <div class="pints-wrapper">
+                            <div class="left-user3898">
+                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
+                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
+                            </div> 
+                            <a href="#" class="designetion439"> </a>
+                            <p> </p>
+                            
+                        </div>
+                        <hr>
+
+                    </div>
+                    <!-- end of Highest points -->
                 </aside>
             </div>
         </div>
-    </section>
+    </div>
     
-    <!--    footer -->
+    <!-- footer -->
     <div class="footer-search">
         <div class="container">
             <div class="row">
                 <div id="custom-search-input">
-                    <!-- <div class="input-group col-md-12"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        <input type="text" class="  search-query form-control user-control30" placeholder="Search here...." /> <span class="input-group-btn">
-                                    <button class="btn btn-danger" type="button">
-                                        <span class=" glyphicon glyphicon-search"></span> </button>
-                        </span>
-                    </div> -->
                 </div>
             </div>
         </div>
