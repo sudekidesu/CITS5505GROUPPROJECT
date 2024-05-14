@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="col-md-9">
                             <div class="right-description893">
                                 <div id="que-hedder2983">
-                                    <h3><a href="post-details.html?id=${question.id}" target="_blank">${question.title}</a></h3>
+                                    <h3><a href="/post?id=${question.id}" target="_blank">${question.title}</a></h3>
                                 </div>
                                 <div class="ques-details10018">
                                     <p>${question.details}</p>

@@ -51,7 +51,11 @@
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="/">Home</a></li>
 							<li><a href="/ask">Ask Question</a></li>
-							<li><a href="/login">Login</a></li>	
+							{% if user %}
+                            <li><a href="/logout">Logout</a></li>
+							{% else %}
+								<li><a href="/login">Login</a></li>
+							{% endif %}	
 							<!-- <li><a href="contact_us.html">Contact us</a></li> -->
 						</ul>
 					</div>

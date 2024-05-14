@@ -36,7 +36,11 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">Home</a></li>
                         <li><a href="/ask">Ask Question</a></li>
-                        <li><a href="/login">Login</a></li>
+                        {% if user %}
+                            <li><a href="/logout">Logout</a></li>
+                        {% else %}
+                            <li><a href="/login">Login</a></li>
+                        {% endif %}
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -68,8 +72,12 @@
                         </div>
                         <div class="post-details-info1982">
                             <p id="postContent"></p >
-                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing gravida odio, sit amet suscipit risus ultrices eu. Fusce viverra neque at purus laoreet consequat. Vivamus vulputate posuere nisl quis consequat. Donec congue commodo mi, sed commodo velit fringilla ac. Fusce placerat venenatis mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras ornare, dolor a aliquet rutrum, dolor turpis condimentum leo, a semper lacus purus in felis. Quisque blandit posuere turpis, eget auctor felis pharetra eu .</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing gravida odio, sit amet suscipit risus ultrices eu. Fusce viverra neque at purus laoreet consequat. Vivamus vulputate posuere nisl quis consequat. Donec congue commodo mi, sed commodo velit fringilla ac. Fusce placerat venenatis mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras ornare, dolor a aliquet rutrum, dolor turpis condimentum leo, a semper lacus purus in felis. Quisque blandit posuere turpis, eget auctor felis pharetra eu .</p> -->
+                            <hr>
+                            <div class="post-footer29032">
+                                <div class="l-rightside39">
+                                    <button type="button" class="tolltip-button thumbs-up2" data-toggle="tooltip" data-placement="bottom" title="Like"><i class="fa fa-thumbs-o-up " aria-hidden="true"></i></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -82,45 +90,51 @@
                                         <li>
                                              <div class="comment-main-level">
                                                 <!-- Avatar -->
-                                                <div class="comment-avatar"><img src="{{ url_for('static', filename='image/images.png') }}" alt=""></div>
-                                                <!-- Contenedor del Comentario -->
-                                                <div class="comment-box">
-                                                    <div class="comment-head">
-                                                        <h6 class="comment-name"><a href="#"> </a></h6> <span><i class="fa fa-clock-o" aria-hidden="true">  </i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
-                                                    <div class="comment-content"> </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                                
-                                            
-                                        <li>
-                                            <div class="comment-avatar"><img src="{{ url_for('static', filename='image/images.png') }}" alt=""></div>
-                                            <div class="comment-box">
-                                                <div class="comment-head">
-                                                    <h6 class="comment-name"><a href="#"> </a></h6> <span><i class="fa fa-clock-o" aria-hidden="true"> </i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
-                                                <div class="comment-content">  </div>
-                                            </div>
-                                        </li>
-
-                                        
-
-                                        <li>
-                                            <div class="comment-avatar"><img src="{{ url_for('static', filename='image/images.png') }}" alt=""></div>
-                                            <div class="comment-box">
-                                                <div class="comment-head">
-                                                    <h6 class="comment-name"><a href="#"> </a></h6> <span><i class="fa fa-clock-o" aria-hidden="true"> </i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
-                                                <div class="comment-content">  </div>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <div class="comment-main-level">
-                                                <!-- Avatar -->
-                                                <div class="comment-avatar"><img src="{{ url_for('static', filename='image/images.png') }}" alt=""></div>
+                                                <div class="comment-avatar"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"></div>
                                                 <!-- Contenedor del Comentario -->
                                                 <div class="comment-box">
                                                     <div class="comment-head">
                                                         <h6 class="comment-name"><a href="#"> </a></h6> <span><i class="fa fa-clock-o" aria-hidden="true"> </i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
+                                                    <div class="comment-content">  </div>
+                                                </div>
+                                            </div>
+                                                
+                                      
+                                            <ul class="comments-list reply-list">
+                                                <li>
+                                                    <div class="comment-avatar"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"></div>
+                                                    <div class="comment-box">
+                                                        <div class="comment-head">
+                                                            <h6 class="comment-name"><a href="#"> </a></h6> <span><i class="fa fa-clock-o" aria-hidden="true"> January 15 , 2014 at 10:00 pm</i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
+                                                        <div class="comment-content">  </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="comment-avatar"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"></div>
+                                                    <div class="comment-box">
+                                                        <div class="comment-head">
+                                                            <h6 class="comment-name"><a href="#"> </a></h6> <span><i class="fa fa-clock-o" aria-hidden="true"> </i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
+                                                        <div class="comment-content">  </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="comment-avatar"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"></div>
+                                                    <div class="comment-box">
+                                                        <div class="comment-head">
+                                                            <h6 class="comment-name"><a href="#"> </a></h6> <span><i class="fa fa-clock-o" aria-hidden="true"> </i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
+                                                        <div class="comment-content">  </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="comment-main-level">
+                                                <!-- Avatar -->
+                                                <div class="comment-avatar"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"></div>
+                                                <!-- Contenedor del Comentario -->
+                                                <div class="comment-box">
+                                                    <div class="comment-head">
+                                                        <h6 class="comment-name"><a href="#"> </a></h6> <span><i class="fa fa-clock-o" aria-hidden="true"> January 15 , 2014 at 10:00 pm</i></span> <i class="fa fa-reply"></i> <i class="fa fa-heart"></i> </div>
                                                     <div class="comment-content">  </div>
                                                 </div>
                                             </div>
@@ -132,7 +146,6 @@
                             </div>
                         </div>
                     </div>
-
 
                     <div class="comment289-box">
                         <h3>Leave A Reply</h3>
@@ -158,7 +171,7 @@
                         <a href="#"><i class="fa fa-question-circle" aria-hidden="true"> Question(20)</i></a> 
                         <i class="fa fa-comment" aria-hidden="true"> Answers(50)</i> 
                     </div> -->
-                    <div class="categori-part329">
+                    <!-- <div class="categori-part329">
                         <h4>Category</h4>
                         <ul>
                             <li><a href="#">web developer</a></li>
@@ -166,7 +179,7 @@
                             <li><a href="#">grapics developer</a></li>
                             <li><a href="#">web developer</a></li>
                         </ul>
-                    </div>
+                    </div> -->
 
                     <!--              highest part-->
                     <div class="highest-part302">
@@ -220,12 +233,13 @@
                 <a href="#" class="designetion439"> </a>
                      <p> </p>
                  </span> </div>
+                 <hr>
                     </div>
                     <!--               end of Highest points -->
 
             
                     <!--        start recent post  -->
-                    <div class="recent-post3290">
+                    <!-- <div class="recent-post3290">
                         <h4>Recent Post</h4>
                         <div class="post-details021"> <a href="#"><h5> </h5></a>
                             <p> </p> <small style="color: #848991"> </small> </div>
@@ -235,7 +249,7 @@
                         <hr>
                         <div class="post-details021"> <a href="#"><h5> </h5></a>
                             <p> </p> <small style="color: #848991"> </small> </div>
-                    </div>
+                    </div> -->
                     <!--       end recent post    -->
                 </aside>
             </div>
@@ -279,7 +293,10 @@
     <script>
         var image = "{{ url_for('static', filename='image/images.png') }}";
     </script>
+    <script src="{{ url_for('static', filename='js/forum.js') }}"></script>
     <script src="{{ url_for('static', filename='js/post-details.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/post-details1.js') }}"></script>
+    
 </body>
 
 </html>

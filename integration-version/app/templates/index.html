@@ -38,7 +38,11 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">Home</a></li>
                         <li><a href="/ask">Ask Question</a></li>
-                        <li><a href="/login">Login</a></li>
+                        {% if user %}
+                            <li><a href="/logout">Logout</a></li>
+                        {% else %}
+                            <li><a href="/login">Login</a></li>
+                        {% endif %}
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -83,12 +87,12 @@
                     <div id="main">
                         <input id="tab1" type="radio" name="tabs" checked>
                         <label for="tab1">Recent Question</label>
-                        <input id="tab2" type="radio" name="tabs">
-                        <label for="tab2">Most Response</label>
+                        <!-- <input id="tab2" type="radio" name="tabs">
+                        <label for="tab2">Most Response</label> -->
                         <input id="tab3" type="radio" name="tabs">
                         <label for="tab3">Recently Answered</label>
-                        <input id="tab4" type="radio" name="tabs">
-                        <label for="tab4">No Answer</label>
+                        <!-- <input id="tab4" type="radio" name="tabs">
+                        <label for="tab4">No Answer</label> -->
                         <!-- <input id="tab5" type="radio" name="tabs">
                         <label for="tab5">Recent Post</label> -->
                         
@@ -1594,7 +1598,7 @@
                 <!--strart col-md-3 (side bar)-->
                 <aside class="col-md-3 sidebar97239">
                     
-                    <div class="categori-part329">
+                    <!-- <div class="categori-part329">
                         <h4>Category</h4>
                         <ul>
                             <li><a href="#">web developer</a></li>
@@ -1602,7 +1606,7 @@
                             <li><a href="#">grapics developer</a></li>
                             <li><a href="#">web developer</a></li>
                         </ul>
-                    </div>
+                    </div> -->
                     
                     <!--              highest part-->
                     <div class="highest-part302">
@@ -1656,13 +1660,14 @@
 <a href="#" class="designetion439"> </a>
 <p> </p>
 </span> </div>
+                    <hr>
                     </div>
                     <!--               end of Highest points -->
 
                    
 
                     <!--        start recent post  -->
-                    <div class="recent-post3290">
+                    <!-- <div class="recent-post3290">
                         <h4>Recent Post</h4>
                         <div class="post-details021"> <a href="#"><h5> </h5></a>
                             <p> </p> <small style="color: #848991"> </small> </div>
@@ -1672,7 +1677,7 @@
                         <hr>
                         <div class="post-details021"> <a href="#"><h5> </h5></a>
                             <p> </p> <small style="color: #848991"> </small> </div>
-                    </div>
+                    </div> -->
                     <!--       end recent post    -->
                 </aside>
             </div>
@@ -1703,6 +1708,8 @@
         var image = "{{ url_for('static', filename='image/images.png') }}";
     </script>
     <script src="{{ url_for('static', filename='js/forum.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/post-details.js') }}"></script>
+    
 </body>
 
 </html>

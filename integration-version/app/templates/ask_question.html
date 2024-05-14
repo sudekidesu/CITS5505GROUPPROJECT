@@ -37,7 +37,11 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">Home</a></li>
                         <li><a href="/ask">Ask Question</a></li>
-                        <li><a href="/login">Login</a></li>
+                        {% if user %}
+                            <li><a href="/logout">Logout</a></li>
+                        {% else %}
+                            <li><a href="/login">Login</a></li>
+                        {% endif %}
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -103,7 +107,7 @@
            
 <!--           strart col-md-3 (side bar)-->
                 <aside class="col-md-3 sidebar97239">
-                    <div class="categori-part329">
+                    <!-- <div class="categori-part329">
                         <h4>Category</h4>
                         <ul style="color: black; font-weight: bold;">
                             <li><a href="#">web developer</a></li>
@@ -112,7 +116,7 @@
                             <li><a href="#">web developer</a></li>     
                         </ul>
                     </div>
-                  
+                   -->
              
                 <!-- <div class="categori-part329">
                     <h4>Category</h4>
@@ -202,14 +206,15 @@
                      <p> </p>
                  </span>
                  
-                  </div>
+                </div>
+                <hr>
                   
               </div>
 <!--               end of Highest points -->
 
 
 <!--        start recent post  -->
-<div class="recent-post3290">
+<!-- <div class="recent-post3290">
     <h4>Recent Post</h4>
     <div class="post-details021">
         <a href="#"><h5> </h5></a>
@@ -230,7 +235,7 @@
     </div>
     
     
-</div>
+</div> -->
 <!--       end recent post    -->
           
            </aside>
@@ -262,6 +267,7 @@
         var image = "{{ url_for('static', filename='image/images.png') }}";
     </script>
     <script src="{{ url_for('static', filename='js/forum.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/post-details.js') }}"></script>
    	
 
   
