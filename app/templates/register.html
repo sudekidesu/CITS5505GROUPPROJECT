@@ -20,7 +20,7 @@
       <div class="title">Sign Up</div>
       <div class="description">Hello there, Register Form</div>
       <form id="registerForm" method="POST">
-          {{ form.hidden_tag() }}
+        <input type="hidden" name="csrf_token" id="csrf_token" />
         <input type="text" name="username" placeholder="Username*" />
         <input type="email" name="email" placeholder="E-Mail*" />
 <!--        <div style="display: flex; justify-content: space-between; align-items: center;">-->
@@ -38,5 +38,9 @@
 </div>
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+  <script>
+      var csrf_token = "{{ token }}";
+      document.getElementById('csrf_token').value = csrf_token;
+  </script>
 </body>
 </html>
