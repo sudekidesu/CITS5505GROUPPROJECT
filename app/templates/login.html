@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>login</title>
+  <meta charset="UTF-8">
+  <!-- Other meta tags -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/loginstyle.css') }}">
 </head>
 <body>
-login
+<div class="modal-wrap">
+  <div class="modal-bodies">
+    <div class="modal-body modal-body-step-1 is-showing">
+      <div class="title">Log In</div>
+      <div class="description">Hello there, Log In</div>
+      <form id="loginForm" method="POST">
+        <input type="hidden" name="csrf_token" id="csrf_token" />
+        <input type="username" name="username" placeholder="Username" />
+        <input type="password" name="password" placeholder="Password" />
+        <div class="text-center">
+          <button type="submit" class="button">LOG IN</button>
+          <a href="/register"><div class="button">Create an account</div></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+  <script>
+      var csrf_token = "{{ token }}";
+      document.getElementById('csrf_token').value = csrf_token;
+  </script>
 </body>
 </html>
