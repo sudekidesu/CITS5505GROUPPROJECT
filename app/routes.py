@@ -183,7 +183,24 @@ def search():
 @app.route("/recentqa")
 def recentqa():
     num_dp = 10
-    questions = Question.query.order_by(desc(Question.create_time)).paginate(page=1, per_page=num_dp)
+    pagination = Question.query.order_by(desc(Question.create_time)).paginate(page=1, per_page=num_dp)
+    questions = pagination.items
+    questions_data = [{"id": question.id,
+                       "author": question.author_id,
+                       "title": question.title,
+                       "category": question.category,
+                       "content": question.content,
+                       "create_time": question.create_time,
+                       "likes": question.likes
+                       } for question in questions]
+
+    response = {
+        "questions": questions_data,
+        "total": pagination.total,
+        "pages": pagination.pages,
+        "current_page": pagination.page
+    }
+    return jsonify(response)
     return questions
 
 
@@ -222,8 +239,38 @@ def dislike(qa_id):
         return jsonify({'message': 'Question not found'}), 404
 
 
+# @app.route("/board")
+# def board():
+#     num_dp = 5
+#     pagination = User.query.order_by(Question.create_time).paginate(page=1, per_page=num_dp)
+#     users = pagination.items
+#     users = [{"id": user.id,
+#                "username": user.username,
+#                "likes": user.likes
+#                } for user in users]
+#
+#     response = {
+#         "users": users,
+#         "total": pagination.total,
+#         "pages": pagination.pages,
+#         "current_page": pagination.page
+#     }
+#     return jsonify(response)
 @app.route("/board")
 def board():
     num_dp = 5
-    users = User.query.order_by(Question.create_time).paginate(page=1, per_page=num_dp)
-    return users
+    # 根据 User.likes 字段进行排序
+    pagination = User.query.order_by(User.likes.desc()).paginate(page=1, per_page=num_dp)
+    users = pagination.items
+    users = [{"id": user.id,
+              "username": user.username,
+              "likes": user.likes
+             } for user in users]
+
+    response = {
+        "users": users,
+        "total": pagination.total,
+        "pages": pagination.pages,
+        "current_page": pagination.page
+    }
+    return jsonify(response)
