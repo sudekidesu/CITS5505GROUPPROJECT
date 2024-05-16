@@ -39,7 +39,7 @@ class Question(db.Model):
     category = db.Column(db.String(100), nullable=False)
     content = db.Column(db.Text, nullable=False)
     create_time = db.Column(db.DateTime, default=datetime.now)
-    likes = db.Column(db.Integer)
+    likes = db.Column(db.Integer, default=0)
 
     # 外键
     author_id = db.Column(db.Integer, db.ForeignKey("user.id"))

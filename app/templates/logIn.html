@@ -1,48 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="title" content="Ask online Form" />
-    <meta
-      name="description"
-      content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ask ideal for wiki sites, knowledge base sites, support forum sites"
-    />
-    <meta
-      name="keywords"
-      content="HTML, CSS, JavaScript,Bootstrap,js,Forum,webstagram ,webdesign ,website ,web ,webdesigner ,webdevelopment"
-    />
-    <meta name="robots" content="index, nofollow" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="language" content="English" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
-    />
-    <link href="{{ url_for('static', filename='css/loginstyle.css') }}" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <div class="modal-wrap">
-      <div class="modal-bodies">
-        <div class="modal-body modal-body-step-1 is-showing">
-          <div class="title">Log In</div>
-          <div class="description">Hello there, Log In</div>
-          <form>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <div class="text-center">
-              <div class="button">LOG IN</div>
-              <a href="/register"
-                ><div class="button">Create an account</div></a
-              >
-            </div>
-          </form>
+<head>
+  <meta charset="UTF-8">
+  <!-- Other meta tags -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/loginstyle.css') }}">
+</head>
+<body>
+<div class="modal-wrap">
+  <div class="modal-bodies">
+    <div class="modal-body modal-body-step-1 is-showing">
+      <div class="title">Log In</div>
+      <div class="description">Hello there, Log In</div>
+      <form id="loginForm" method="POST">
+        <input type="hidden" name="csrf_token" id="csrf_token" />
+        <input type="username" name="username" placeholder="Username" />
+        <input type="password" name="password" placeholder="Password" />
+        <div class="text-center">
+          <button type="submit" class="button">LOG IN</button>
+          <a href="/register"><div class="button">Create an account</div></a>
         </div>
-      </div>
+      </form>
     </div>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  </body>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+  <script>
+      var csrf_token = "{{ token }}";
+      document.getElementById('csrf_token').value = csrf_token;
+  </script>
+</body>
 </html>
