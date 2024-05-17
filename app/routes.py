@@ -131,6 +131,8 @@ def qa_detail(qa_id):
             content = form.content.data
             answer = Answer(content=content, question_id=question_id, author=current_user)
             db.session.add(answer)
+            question = Question.query.get(qa_id)
+            question.update_time = answer.create_time
             db.session.commit()
             return redirect(url_for("qa_detail", qa_id=qa_id))
         else:
@@ -154,22 +156,6 @@ def public_answer():
         print(form.errors)
         return redirect(url_for("qa_detail", qa_id=request.form.get("question_id")))
 
-
-@app.post("/comment/public")
-@login_required
-def public_comment():
-    form = CommentForm(request.form)
-    if form.validate():
-        question_id = form.question_id.data
-        content = form.content.data
-        answer_id = form.answer_id.data
-        comment = Answer(content=content, answer_id=answer_id, author_id=g._login_user.id)
-        db.session.add(comment)
-        db.session.commit()
-        return redirect(url_for("qa_detail", qa_id=question_id))
-    else:
-        print(form.errors)
-        return redirect(url_for("qa_detail", qa_id=request.form.get("question_id")))
 
 
 @app.route("/search")
@@ -224,7 +210,30 @@ def recentqa():
         "current_page": pagination.page
     }
     return jsonify(response)
+@app.route("/recentanswered")
+def recentanswered():
+    page = request.args.get("page", default=1, type=int)
+    per_page = request.args.get("per_page", default=10, type=int)
+    pagination  = Question.query.order_by(desc(Question.update_time)).paginate(page=page, per_page=per_page)
+    questions = pagination.items
+    questions_data = [{"id": question.id,
+                       "author": question.author_id,
+                       "username": question.author.username,
+                       "title": question.title,
+                       "category": question.category,
+                       "content": question.content,
+                       "create_time": question.create_time,
+                       "update_time": question.update_time,
+                       "likes": question.likes
+                       } for question in questions]
 
+    response = {
+        "questions": questions_data,
+        "total": pagination.total,
+        "pages": pagination.pages,
+        "current_page": pagination.page
+    }
+    return jsonify(response)
 
 @app.route("/qa/like", methods=['POST'])
 @login_required
