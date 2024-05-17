@@ -58,6 +58,7 @@ def register():
         # 验证用户提交的邮箱和验证码是否对应且正确
         # 表单验证：flask-wtf: wtforms
         form = RegisterForm(request.form)
+        print("验证: " + str(form.validate()))
         if form.validate():
             email = form.email.data
             username = form.username.data
@@ -88,7 +89,7 @@ def public_question():
             title = form.title.data
             category = form.category.data
             content = form.content.data
-            question = Question(title=title, category=category, content=content, author=g._login_user)
+            question = Question(title=title, category=category, content=content, author=current_user)
             db.session.add(question)
             db.session.commit()
             return redirect(url_for("qa_detail", qa_id=question.id))
@@ -97,26 +98,46 @@ def public_question():
             return redirect(url_for("public_question"))
 
 
-@app.route("/qa/detail/<qa_id>")
+@app.route("/qa/detail/<qa_id>", methods=['GET', 'POST'])
 def qa_detail(qa_id):
     if request.method == 'GET':
+        # qa_id = request.args.get("question_id")
         question = Question.query.get(qa_id)
+        question_data = {"id": question.id,
+                       "authorid": question.author_id,
+                       "username": question.author.username,
+                       "category": question.category,
+                       "title": question.title,
+                       "content": question.content,
+                       "create_time": question.create_time,
+                       "likes": question.likes
+                       }
         token = generate_csrf()
-        return render_template("question.html", question=question, token=token)
+        page = request.args.get("page", default=1, type=int)
+        per_page = request.args.get("per_page", default=10, type=int)
+        pagination = Answer.query.filter(Answer.question_id==qa_id).order_by().paginate(page=page, per_page=per_page)
+        answers = pagination.items
+        answers_data = [{"id": answer.id,
+                       "author": answer.author_id,
+                       "username": answer.author.username,
+                       "content": answer.content,
+                       "create_time": answer.create_time
+                       } for answer in answers]
+        return render_template("post-details.html", question_data=question_data, token=token, answers_data=answers_data)
     else:
-        form = CommentForm(request.form)
+        if not current_user.is_authenticated:
+            return redirect(url_for('qa_detail', qa_id=qa_id))
+        form = AnswerForm(request.form)
         if form.validate():
-            question_id = form.question_id.data
+            question_id = qa_id
             content = form.content.data
-            answer_id = form.answer_id.data
-            comment = Answer(content=content, answer_id=answer_id, author_id=g._login_user.id)
-            db.session.add(comment)
+            answer = Answer(content=content, question_id=question_id, author=current_user)
+            db.session.add(answer)
             db.session.commit()
-            return redirect(url_for("qa_detail", qa_id=question_id))
+            return redirect(url_for("qa_detail", qa_id=qa_id))
         else:
             print(form.errors)
-            return redirect(url_for("qa_detail", qa_id=request.form.get("question_id")))
-
+            return redirect(url_for("qa_detail", qa_id=qa_id))
 
 
 @app.post("/answer/public")
@@ -160,10 +181,11 @@ def search():
     q = request.args.get("q")
     page = request.args.get("page", default=1, type=int)
     per_page = request.args.get("per_page", default=10, type=int)
-    pagination  = Question.query.filter(Question.title.contains(q)).paginate(page=page, per_page=per_page)
+    pagination  = Question.query.filter(Question.title.contains(q)).order_by(desc(Question.create_time)).paginate(page=page, per_page=per_page)
     questions = pagination.items
     questions_data = [{"id": question.id,
                        "author": question.author_id,
+                       "username": question.author.username,
                        "title": question.title,
                        "category": question.category,
                        "content": question.content,
@@ -178,33 +200,10 @@ def search():
         "current_page": pagination.page
     }
     return jsonify(response)
-
-
-@app.route("/recentqa")
-def recentqa():
-    num_dp = 10
-    pagination = Question.query.order_by(desc(Question.create_time)).paginate(page=1, per_page=num_dp)
-    questions = pagination.items
-    questions_data = [{"id": question.id,
-                       "author": question.author_id,
-                       "title": question.title,
-                       "category": question.category,
-                       "content": question.content,
-                       "create_time": question.create_time,
-                       "likes": question.likes
-                       } for question in questions]
-
-    response = {
-        "questions": questions_data,
-        "total": pagination.total,
-        "pages": pagination.pages,
-        "current_page": pagination.page
-    }
-    return jsonify(response)
-    return questions
 
 
 @app.route("/qa/like", methods=['POST'])
+@login_required
 def like():
     form = QalikeForm(request.form)
     if form.validate():
@@ -239,38 +238,74 @@ def dislike(qa_id):
         return jsonify({'message': 'Question not found'}), 404
 
 
-# @app.route("/board")
-# def board():
-#     num_dp = 5
-#     pagination = User.query.order_by(Question.create_time).paginate(page=1, per_page=num_dp)
-#     users = pagination.items
-#     users = [{"id": user.id,
-#                "username": user.username,
-#                "likes": user.likes
-#                } for user in users]
-#
-#     response = {
-#         "users": users,
-#         "total": pagination.total,
-#         "pages": pagination.pages,
-#         "current_page": pagination.page
-#     }
-#     return jsonify(response)
 @app.route("/board")
 def board():
-    num_dp = 5
-    # 根据 User.likes 字段进行排序
-    pagination = User.query.order_by(User.likes.desc()).paginate(page=1, per_page=num_dp)
-    users = pagination.items
-    users = [{"id": user.id,
-              "username": user.username,
-              "likes": user.likes
-             } for user in users]
-
+    page = request.args.get("page", default=1, type=int)
+    per_page = request.args.get("per_page", default=5, type=int)
+    pagination = User.query.order_by(User.likes).paginate(page=page, per_page=per_page)
+    users_data = [{"id": user.id,
+                   "username": user.username,
+                   "likes": user.likes
+                   } for user in pagination]
     response = {
-        "users": users,
+        "questions": users_data,
         "total": pagination.total,
         "pages": pagination.pages,
         "current_page": pagination.page
     }
     return jsonify(response)
+
+@app.route("/recentqa")
+def recentqa():
+    page = request.args.get("page", default=1, type=int)
+    per_page = request.args.get("per_page", default=10, type=int)
+    pagination  = Question.query.order_by(desc(Question.create_time)).paginate(page=page, per_page=per_page)
+    questions = pagination.items
+    questions_data = [{"id": question.id,
+                       "author": question.author_id,
+                       "username": question.author.username,
+                       "title": question.title,
+                       "category": question.category,
+                       "content": question.content,
+                       "create_time": question.create_time,
+                       "likes": question.likes
+                       } for question in questions]
+
+    response = {
+        "questions": questions_data,
+        "total": pagination.total,
+        "pages": pagination.pages,
+        "current_page": pagination.page
+    }
+    return jsonify(response)
+
+
+@app.route("/recentanswered")
+def recentanswered():
+    page = request.args.get("page", default=1, type=int)
+    per_page = request.args.get("per_page", default=10, type=int)
+    pagination  = Question.query.order_by(desc(Question.update_time)).paginate(page=page, per_page=per_page)
+    questions = pagination.items
+    questions_data = [{"id": question.id,
+                       "author": question.author_id,
+                       "username": question.author.username,
+                       "title": question.title,
+                       "category": question.category,
+                       "content": question.content,
+                       "create_time": question.create_time,
+                       "update_time": question.update_time,
+                       "likes": question.likes
+                       } for question in questions]
+
+    response = {
+        "questions": questions_data,
+        "total": pagination.total,
+        "pages": pagination.pages,
+        "current_page": pagination.page
+    }
+    return jsonify(response)
+
+
+@app.route("/about")
+def about():
+    return render_template('About_us.html')

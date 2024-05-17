@@ -1,3 +1,5 @@
+
+
 @charset "utf-8";
 
 /* base styles */
@@ -120,7 +122,8 @@ h2.demo-text {
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     border-bottom-color: #b3b3b3;
-    background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+    filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);
     *zoom: 1;
 }
 
@@ -417,7 +420,7 @@ h1 {
     line-height: 40px;
 }
 
-.col-lg-6 > :nth-child(1) {
+.col-lg-6 nth:child(1) {
     margin-left: 0px;
 }
 
@@ -496,7 +499,7 @@ h1 {
     text-decoration: none;
     background-color: #FF7361;
     background-repeat: repeat-x;
-    background: linear-gradient(to bottom, #0088cc, #0077b3);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
 
 .dropdown-menu>li>a {

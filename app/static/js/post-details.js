@@ -1,95 +1,65 @@
 document.addEventListener('DOMContentLoaded', function() {
-    function getParameterByName(name, url = window.location.href) {
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    // Function to fetch a post based on the ID from the URL
+    function loadPost() {
+        const postId = getParameterByName('id');
+        fetch(`/qa/detail/${postId}`) // Make sure this matches your route for fetching a specific post
+        .then(response => response.json())
+        .then(question => {
+            if (question) {
+                document.getElementById('postTitle').textContent = question.title;
+                document.getElementById('postContent').textContent = question.details;
+            } else {
+                document.getElementById('postTitle').textContent = 'Post not found';
+                document.getElementById('postContent').textContent = 'The requested post does not exist.';
+            }
+        })
+        .catch(error => console.error('Error loading the post:', error));
     }
 
-    var postId = getParameterByName('id');  // 获取 URL 中的 id 参数
-    var questions = JSON.parse(localStorage.getItem('questions')) || [];
-    var question = questions.find(question => question.id && question.id.toString() === postId);  // 确保 id 存在并根据 id 找到相应的帖子
-
-    if (question) {
-        document.getElementById('postTitle').textContent = question.title;  // 设置帖子标题
-        document.getElementById('postContent').textContent = question.details;  // 设置帖子内容
-    } else {
-        document.getElementById('postTitle').textContent = 'Post not found';
-        document.getElementById('postContent').textContent = 'The requested post does not exist.';
-    }
-});
-
- 
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    var questions = JSON.parse(localStorage.getItem('questions')) || [];
-    var latestQuestion = questions[questions.length - 1];
-    if (latestQuestion) {
-        document.getElementById('postTitle').textContent = latestQuestion.title;
-        document.getElementById('postContent').textContent = latestQuestion.details;
-    }
-
-    var submitButton = document.querySelector('.pos393-submit');
-    var commentInput = document.querySelector('.comment-input219882');
-    var commentsList = document.getElementById('comments-list');
-
+    // Add comments
+    const submitButton = document.querySelector('.pos393-submit');
     submitButton.addEventListener('click', function() {
-        var commentText = commentInput.value.trim();
-        if (commentText) {
-            var newComment = document.createElement('li');
-            newComment.innerHTML = `
-                <div class="comment-main-level">
-                    <div class="left-user12923 left-user12923-repeat">
-                        <img src="${image}" alt="Image" class="question-image">
-                    </div>
-                    <div class="comment-box">
-                        <div class="comment-head">
-                            <h6 class="comment-name">Anonymous</h6>
-                            <span><i class="fa fa-clock-o" aria-hidden="true"></i> just now</span>
+        const commentText = document.querySelector('.comment-input219882').value.trim();
+        const postId = getParameterByName('id');
+        if (commentText && postId) {
+            fetch(`/comment/public`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': document.querySelector('input[name=csrfmiddlewaretoken]').value
+                },
+                body: JSON.stringify({ content: commentText, question_id: postId })
+            })
+            .then(response => response.json())
+            .then(comment => {
+                var newComment = document.createElement('li');
+                newComment.innerHTML = `
+                    <div class="comment-main-level">
+                        <div class="comment-avatar"><img src="${comment.avatarUrl || 'path/to/avatar.png'}" alt=""></div>
+                        <div class="comment-box">
+                            <div class="comment-head">
+                                <h6 class="comment-name">${comment.authorName || 'Anonymous'}</h6>
+                                <span>${new Date(comment.timestamp).toLocaleTimeString()}</span>
+                            </div>
+                            <div class="comment-content">${comment.text}</div>
                         </div>
-                        <div class="comment-content">${commentText}</div>
-                    </div>
-                </div>`;
-            commentsList.appendChild(newComment);
-            commentInput.value = ''; // 清空输入框
+                    </div>`;
+                document.getElementById('comments-list').appendChild(newComment);
+                document.querySelector('.comment-input219882').value = '';
+            })
+            .catch(error => console.error('Error posting comment:', error));
         }
     });
+
+    loadPost();
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var questions = JSON.parse(localStorage.getItem('questions')) || [];
-    var latestQuestion = questions[questions.length - 1];
-    if (latestQuestion) {
-        document.getElementById('postTitle').textContent = latestQuestion.title;
-        document.getElementById('postContent').textContent = latestQuestion.details;
-    }
-
-    var submitButton = document.querySelector('.pos393-submit');
-    var commentInput = document.querySelector('.comment-input219882');
-    var commentsList = document.getElementById('comments-list');
-
-    submitButton.addEventListener('click', function() {
-        var commentText = commentInput.value.trim();
-        if (commentText) {
-            var newComment = document.createElement('li');
-            newComment.innerHTML = `
-                <div class="comment-main-level">
-                    <div class="left-user12923 left-user12923-repeat">
-                        <img src="${image}" alt="Image" class="question-image">
-                    </div>
-                    <div class="comment-box">
-                        <div class="comment-head">
-                            <h6 class="comment-name">Anonymous</h6>
-                            <span><i class="fa fa-clock-o" aria-hidden="true"></i> just now</span>
-                        </div>
-                        <div class="comment-content">${commentText}</div>
-                    </div>
-                </div>`;
-            commentsList.appendChild(newComment);
-            commentInput.value = ''; // 清空输入框
-        }
-    });
-});
+// Helper function to extract parameters from the URL
+function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}

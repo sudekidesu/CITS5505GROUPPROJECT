@@ -19,28 +19,17 @@
     <div class="modal-body modal-body-step-1 is-showing">
       <div class="title">Sign Up</div>
       <div class="description">Hello there, Register Form</div>
-      <form id="registerForm" method="POST">
-        <input type="hidden" name="csrf_token" id="csrf_token" />
-        <input type="text" name="username" placeholder="Username*" />
-        <input type="email" name="email" placeholder="E-Mail*" />
-<!--        <div style="display: flex; justify-content: space-between; align-items: center;">-->
-<!--          <input type="text" name="verification_code" placeholder="Enter verification code*" style="flex-grow: 2; margin-right: 10px;"/>-->
-<!--          <button type="button" class="button" onclick="sendVerificationCode()" style="padding: 2px 2px 1px 1px; font-size: 1em;">Send Code</button>-->
-<!--        </div>-->
-        <input type="password" name="password" placeholder="Password*" />
-        <input type="password" name="password_confirm" placeholder="Confirm Password*" />
-        <div class="text-center">
-          <button typex="submit" class="button">Sign Up</button>
-        </div>
-      </form>
+      <input type="text" id="username" placeholder="Username*" />
+      <input type="email" id="email" placeholder="E-Mail*" />
+      <input type="password" id="password" placeholder="Password*" />
+      <input type="password" id="password_confirm" placeholder="Confirm Password*" />
+      <div class="text-center">
+        <button id="submit" type="submit" class="button">Sign Up</button>
+      </div>
     </div>
   </div>
 </div>
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-<script src="{{ url_for('static', filename='js/register.js') }}"></script>
-  <script>
-      var csrf_token = "{{ token }}";
-      document.getElementById('csrf_token').value = csrf_token;
-  </script>
+<script src="{{ url_for('static', filename='js/pages/register.js') }}" type="module"></script>
 </body>
 </html>

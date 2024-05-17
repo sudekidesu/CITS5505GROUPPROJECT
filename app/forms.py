@@ -33,9 +33,7 @@ class QuestionForm(FlaskForm):
 
 
 class AnswerForm(FlaskForm):
-    category = StringField(validators=[DataRequired()])
     content = StringField(validators=[DataRequired()])
-    question_id = IntegerField(validators=[DataRequired()])
 
 
 class CommentForm(FlaskForm):

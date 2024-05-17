@@ -13,23 +13,16 @@
     <div class="modal-body modal-body-step-1 is-showing">
       <div class="title">Log In</div>
       <div class="description">Hello there, Log In</div>
-      <form id="loginForm" method="POST">
-        <input type="hidden" name="csrf_token" id="csrf_token" />
-        <input type="username" name="username" placeholder="Username" />
-        <input type="password" name="password" placeholder="Password" />
-        <div class="text-center">
-          <button type="submit" class="button">LOG IN</button>
-          <a href="/register"><div class="button">Create an account</div></a>
-        </div>
-      </form>
+      <input type="username" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <div class="text-center">
+        <button id="submit" class="button">LOG IN</button>
+        <a href="/register"><div class="button">Create an account</div></a>
+      </div>
     </div>
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="{{ url_for('static', filename='js/login.js') }}"></script>
-  <script>
-      var csrf_token = "{{ token }}";
-      document.getElementById('csrf_token').value = csrf_token;
-  </script>
+<script src="{{ url_for('static', filename='js/pages/login.js') }}" type="module"></script>
 </body>
 </html>
