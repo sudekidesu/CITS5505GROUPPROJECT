@@ -6,7 +6,6 @@ The purpose of the website: On our website, users can post any questions they wa
 
 How to use: 
 1.Firstly, you need to click login button in home page.
-![alt text](image.png)
 
 2.Click create an account button in login page.
 
