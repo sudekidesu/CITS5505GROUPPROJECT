@@ -1,4 +1,5 @@
 from flask import Flask
+from app.config import Config
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
@@ -6,11 +7,9 @@ from flask_wtf import CSRFProtect
 db = SQLAlchemy()
 login = LoginManager()
 login.login_view = 'login'
-def create_app():
+def create_app(config):
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///forumDB.db'  # 例如 SQLite
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['SECRET_KEY'] = 'secret_key'
+    app.config.from_object(config)
     csrf = CSRFProtect(app)
     db.init_app(app)
     login.init_app(app)
