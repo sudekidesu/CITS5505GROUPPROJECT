@@ -1,318 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="title" content="Ask online Form" />
+		<meta
+			name="description"
+			content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ask ideal for wiki sites, knowledge base sites, support forum sites"
+		/>
+		<meta
+			name="keywords"
+			content="HTML, CSS, JavaScript,Bootstrap,js,Forum,webstagram ,webdesign ,website ,web ,webdesigner ,webdevelopment"
+		/>
+		<meta name="robots" content="index, nofollow" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="language" content="English" />
+		<title>UWA IT Forum</title>
+		<link
+			href="{{ url_for('static', filename='css/bootstrap.css') }}"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<link
+			href="{{ url_for('static', filename='css/style.css') }}"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<link
+			href="{{ url_for('static', filename='css/font-awesome.min.css') }}"
+			rel="stylesheet"
+			type="text/css"
+		/>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="Ask online Form">
-    <meta name="description" content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ask ideal for wiki sites, knowledge base sites, support forum sites">
-    <meta name="keywords" content="HTML, CSS, JavaScript,Bootstrap,js,Forum,webstagram ,webdesign ,website ,web ,webdesigner ,webdevelopment">
-    <meta name="robots" content="index, nofollow">
-    <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
-    <meta name="language" content="English">
-    <title>UWA IT Forum</title>
-    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-</head>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/pages/index.css') }}"
+			type="text/css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+			type="text/css"
+		/>
+	</head>
 
+	<body>
+		<!-- ==========header mega navbar=======-->
+		<div class="top-menu-bottom932">
+			<nav class="navbar navbar-default">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button
+							type="button"
+							class="navbar-toggle collapsed"
+							data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1"
+							aria-expanded="false"
+						>
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span> <span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href=""
+							><img
+								src="{{ url_for('static', filename='image/logo.png') }}"
+								alt="Logo"
+						/></a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div
+						class="collapse navbar-collapse"
+						id="bs-example-navbar-collapse-1"
+					>
+						<ul class="nav navbar-nav"></ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="/">Home</a></li>
+							<li><a href="/qa/public">Ask Question</a></li>
+							{% if user %}
+							<li><a href="/logout">Logout</a></li>
+							{% else %}
+							<li><a href="/login">Login</a></li>
+							{% endif %}
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container-fluid -->
+			</nav>
+		</div>
 
+		<!--======= welcome section on top background=====-->
+		<section class="welcome-part-one">
+			<div class="container">
+				<div class="welcome-demop102 text-center">
+					<h2>Welcome to our forum website!</h2>
+					<p>
+						Here you will be able to search for any post that interests you and
+						interact with the person who posted it. In addition, you can also
+						post any questions to ask for help from others. <br />
+						Hope you can have a good experience here!
+					</p>
+					<div class="button0239-item">
+						<a href="/about">
+							<button type="button" class="aboutus022">About Us</button>
+						</a>
+					</div>
+					<div class="form-style8292">
+						<div class="input-group">
+							<span class="input-group-addon"
+								><i class="fa fa-pencil-square" aria-hidden="true"></i
+							></span>
+							<input
+								id="searchInput"
+								type="text"
+								class="form-control form-control8392"
+								placeholder="Search any post that interests you"
+							/>
+							<span id="searchButton" class="input-group-addon"> Search </span>
+						</div>
+					</div>
+					<div id="searchResults"></div>
+				</div>
+			</div>
+		</section>
 
-<body>
-    
-    
-    
-    <!-- ==========header mega navbar=======-->
-    <div class="top-menu-bottom932">
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                    <a class="navbar-brand" href=""><img src="{{ url_for('static', filename='image/logo.png') }}" alt="Logo"></a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav"> </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/ask">Ask Question</a></li>
-                        {% if user %}
-                            <li><a href="/logout">Logout</a></li>
-                        {% else %}
-                            <li><a href="/login">Login</a></li>
-                        {% endif %}
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-    </div>
-    
-    
-    <!--======= welcome section on top background=====-->
-    <section class="welcome-part-one">
-        <div class="container">
-            <div class="welcome-demop102 text-center">
-                <h2>Welcome to our forum website!</h2>
-                <p>Here you will be able to search for any post that interests you and interact with the person who posted it. In addition, you can also post any questions to ask for help from others.
-                    <br> Hope you can have a good experience here!</p>
-                <div class="button0239-item">
-                    <a href="/about" class="aboutus022">
-                        About us
-                    </a>  
-                </div>
-                <div class="form-style8292">
-                    <div class="input-group"> <span class="input-group-addon"><i class="fa fa-pencil-square" aria-hidden="true"></i></span>
-                        <input id="searchInput" type="text" class="form-control form-control8392" placeholder="Search any post that interests you"> 
-                        <span class="input-group-addon">
-                            <a href="#">Search</a>
-                        </span> 
-                    </div>
-                </div>
-                <div id="searchResults"></div>
-            </div>
-        </div>
-    </section>
-    
-    
-    <!-- ======content section/body=====-->
-    <div class="main-content920">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9">
-                    <div id="main">
-                        <input id="tab1" type="radio" name="tabs" checked>
-                        <label for="tab1">Recent Question</label>
-                        <!-- <input id="tab2" type="radio" name="tabs">
-                        <label for="tab2">Most Response</label> -->
-                        <input id="tab3" type="radio" name="tabs">
-                        <label for="tab3">Recently Answered</label>
-                        <!-- <input id="tab4" type="radio" name="tabs">
-                        <label for="tab4">No Answer</label> -->
-                        <!-- <input id="tab5" type="radio" name="tabs">
-                        <label for="tab5">Recent Post</label> -->
-                        
-                    
-                        
-                        <div id="content1">
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination">
-                                  <li>
-                                    <a href="#" aria-label="Previous">
-                                      <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                  </li>
-                                  <li><a href="#">1</a></li>
-                                  <li><a href="#">2</a></li>
-                                  <li><a href="#">3</a></li>
-                                  <li><a href="#">4</a></li>
-                                  <li><a href="#">5</a></li>
-                                  <li>
-                                    <a href="#" aria-label="Next">
-                                      <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                  </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!--  End of content-1 -->
-                        
-                        <div id="content2">
-                            <!--Recent Question Content Section -->
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination">
-                                <li>
-                                    <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        
-                        <!-- end of content-2 -->
-                        
-                    <div id="content3">
-                        <!--Recent Question Content Section -->
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                            </ul>
-                        </nav>
-                    </div>
-                        
-                    
-                    <div id="content4">
-                        <!--Recent Question Content Section -->
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                            </ul>
-                        </nav>
-                    </div>
-                        
-                        
-                        <div id="content5">
-                            <!--Recent Question Content Section -->
-                            <!--End of content-5-->
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination">
-                                  <li>
-                                    <a href="#" aria-label="Previous">
-                                      <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                  </li>
-                                  <li><a href="#">1</a></li>
-                                  <li><a href="#">2</a></li>
-                                  <li><a href="#">3</a></li>
-                                  <li><a href="#">4</a></li>
-                                  <li><a href="#">5</a></li>
-                                  <li>
-                                    <a href="#" aria-label="Next">
-                                      <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                  </li>
-                                </ul>
-                            </nav>
-                        </div>
-               
-                    </div>
-                </div>
-                <!--end of col-md-9 -->
+		<!-- ======content section/body=====-->
+		<section class="main-content920">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+						<div id="main">
+							<input id="tab1" type="radio" name="tabs" checked />
+							<label for="tab1">Recent Question</label>
+							<input id="tab3" type="radio" name="tabs" />
+							<label for="tab3">Recently Answered</label>
 
-                <!--strart col-md-3 (side bar)-->
-                <aside class="col-md-3 sidebar97239">  
-                    <!-- highest part -->
-                    <div class="highest-part302">
-                        <h4>Highest Points</h4>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div>
-                            <a href="#" class="designetion439"> </a>
-                            <p> </p>
-                                
-                        </div>
+							<div id="_content_"></div>
+							<nav aria-label="Page navigation">
+								<ul class="pagination" id="navigation"></ul>
+							</nav>
+						</div>
+					</div>
+					<!--end of col-md-9 -->
 
-                        <hr>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div> 
-                            <a href="#" class="designetion439"> </a>
-                            <p> </p>
-                             
-                        </div>
+					<!--strart col-md-3 (side bar)-->
+					<aside class="col-md-3 sidebar97239">						
+						<!--highest part-->
+						<div class="highest-part302">
+							<h4>Highest Points</h4>
+							<div id="board"></div>
+						</div>
+						<!--end of Highest points -->
+					</aside>
+				</div>
+			</div>
+		</section>
 
-                        <hr>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div> 
-                            <a href="#" class="designetion439"> </a>
-                            <p> </p>
-                            
-                        </div>
+		<!--    footer -->
 
-                        <hr>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div> 
-                            <a href="#" class="designetion439"> </a>
-                            <p> </p>
-                           
-                        </div>
+		<section class="footer-part">
+			<div class="container">
+				<div class="row">
+					<!-- <div class="col-md-3"> -->
+					<div class="info-part-one320">
+						<h4>Reference</h4>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+							adipiscing gravida odio, sit amet suscipit risus ultrices eu.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-                        <hr>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div> 
-                            <a href="#" class="designetion439"> </a>
-                            <p> </p>
-                            
-                        </div>
-                        <hr>
-
-                    </div>
-                    <!-- end of Highest points -->
-                </aside>
-            </div>
-        </div>
-    </div>
-
-    <!--    footer -->
-    <section class="footer-part">
-        <div class="container">
-            <div class="row">
-                <!-- <div class="col-md-3"> -->
-                    <div class="info-part-one320">
-                        <h4>Reference</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing gravida odio, sit amet suscipit risus ultrices eu.</p>
-
-                    </div>
-               
-            </div>
-        </div>
-    </section>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <!-- <script src="{{ url_for('static', filename='js/npm.js') }}"></script> -->
-    <script>
-        var image = "{{ url_for('static', filename='image/images.png') }}";
-    </script>
-    <script src="{{ url_for('static', filename='js/forum.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/post-details.js') }}"></script>
-    
-</body>
-
+		
+		<script src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+		<script>
+			var image = "{{ url_for('static', filename='image/images.png') }}";
+		</script>
+		<script
+			src="{{ url_for('static', filename='js/pages/index.js') }}"
+			type="module"
+		></script>
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		
+	</body>
 </html>

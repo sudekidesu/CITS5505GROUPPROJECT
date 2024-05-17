@@ -24,7 +24,7 @@ def index():
     else:
         token = generate_csrf()
         return render_template('index.html', token=token)
-
+    
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -57,6 +57,7 @@ def register():
     else:
         # 验证用户提交的邮箱和验证码是否对应且正确
         # 表单验证：flask-wtf: wtforms
+        print(request)
         form = RegisterForm(request.form)
         if form.validate():
             email = form.email.data
@@ -131,6 +132,8 @@ def qa_detail(qa_id):
             content = form.content.data
             answer = Answer(content=content, question_id=question_id, author=current_user)
             db.session.add(answer)
+            question = Question.query.get(qa_id)
+            question.update_time = answer.create_time
             db.session.commit()
             return redirect(url_for("qa_detail", qa_id=qa_id))
         else:
@@ -180,7 +183,7 @@ def search():
     q = request.args.get("q")
     page = request.args.get("page", default=1, type=int)
     per_page = request.args.get("per_page", default=10, type=int)
-    pagination  = Question.query.filter(Question.title.contains(q)).paginate(page=page, per_page=per_page)
+    pagination  = Question.query.filter(Question.title.contains(q)).order_by(desc(Question.create_time)).paginate(page=page, per_page=per_page)
     questions = pagination.items
     questions_data = [{"id": question.id,
                        "author": question.author_id,
@@ -279,3 +282,32 @@ def board():
         "current_page": pagination.page
     }
     return jsonify(response)
+
+@app.route("/recentanswered")
+def recentanswered():
+    page = request.args.get("page", default=1, type=int)
+    per_page = request.args.get("per_page", default=10, type=int)
+    pagination  = Question.query.order_by(desc(Question.update_time)).paginate(page=page, per_page=per_page)
+    questions = pagination.items
+    questions_data = [{"id": question.id,
+                       "author": question.author_id,
+                       "username": question.author.username,
+                       "title": question.title,
+                       "category": question.category,
+                       "content": question.content,
+                       "create_time": question.create_time,
+                       "update_time": question.update_time,
+                       "likes": question.likes
+                       } for question in questions]
+
+    response = {
+        "questions": questions_data,
+        "total": pagination.total,
+        "pages": pagination.pages,
+        "current_page": pagination.page
+    }
+    return jsonify(response)
+
+@app.route("/about")
+def about():
+    return render_template('About_us.html')

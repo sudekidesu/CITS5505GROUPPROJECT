@@ -6,19 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="Ask online Form">
-    <meta name="description" content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ask ideal for wiki sites, knowledge base sites, support forum sites">
-    <meta name="keywords" content="HTML, CSS, JavaScript,Bootstrap,js,Forum,webstagram ,webdesign ,website ,web ,webdesigner ,webdevelopment">
+    <meta name="description"
+        content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ask ideal for wiki sites, knowledge base sites, support forum sites">
+    <meta name="keywords"
+        content="HTML, CSS, JavaScript,Bootstrap,js,Forum,webstagram ,webdesign ,website ,web ,webdesigner ,webdevelopment">
     <meta name="robots" content="index, nofollow">
-    <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
     <title>Ask_question</title>
     <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url_for('static', filename='css/editor.css') }}" rel="stylesheet" type="text/css">
-    <!-- <link href="css/animate.css" rel="stylesheet" type="text/css"> -->
     <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" type="text/css">
-    
+
 </head>
 
 <body>
@@ -28,19 +29,23 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                    <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo.png') }}" alt="Logo"></a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle
+                            navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                            class="icon-bar"></span> </button>
+                    <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo.png') }}"
+                            alt="Logo"></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav"> </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/ask">Ask Question</a></li>
+                        <li><a href="/qa/public">Ask Question</a></li>
                         {% if user %}
-                            <li><a href="/logout">Logout</a></li>
+                        <li><a href="/logout">Logout</a></li>
                         {% else %}
-                            <li><a href="/login">Login</a></li>
+                        <li><a href="/login">Login</a></li>
                         {% endif %}
                     </ul>
                 </div>
@@ -52,154 +57,96 @@
 
 
     <section class="header-descriptin329">
-        <div class="container">
+        <div class="container" align="center">
             <h2>Post here!</h2>
         </div>
     </section>
 
 
-    <div class="main-content920">
+    <section class="main-content920">
         <div class="container">
-            <div class="row" >
+            <div class="row">
                 <div class="col-md-9">
-                <div class="ask-question-input-part032">
-                      <h4>Ask Question</h4>
-                 <hr>
+                    <div class="ask-question-input-part032">
+                        <h4>Ask Question</h4>
+                        <hr>
 
 
-                    <form>
- <div class="email-part320">
-     <!-- <span class="form-description442">E-Mail* </span><input type="text" name="fname" class="email30" placeholder="Enter Your Email">   -->
-                        </div>
-                        <div class="question-title39">
-                            <span class="form-description433">Question-Title* </span><input type="text" name="fname" class="question-ttile32" placeholder="Write Your Question Title">
-                        </div>
-                        
-    <div class="categori49">
-        <span class="form-description43305">Category* </span>
-        <label>
-<input list="browsers" name="myBrowser" class="list-category53"/></label>
-<datalist id="browsers">
-  <option value="Front_End Web Developer">
-  <option value="Back-End develoer">
-  <option value="Andriod Developer">
-  <option value="Web Application">
-  <option value="System Analyst">
-  <option value="Security">
-</datalist>
-    </div>
-       <div class="details2-239">
-        <div class="col-md-12 nopadding">
-            <textarea id="txtEditor" rows="20" cols="105">Input here</textarea> 
-        </div>
-                        </div>	
-                     
-</form>
-                 <div class="publish-button2389">
-                    <button type="button" class="publis1291">Publish your Question</button>
-                </div>
-               
-                </div>
-             
-              
-                </div>
-                <!-- end of col-md-9 -->
-           
-                <!-- strart col-md-3 (side bar)-->
-                <aside class="col-md-3 sidebar97239">
-                    <!-- highest part-->
-                    <div class="highest-part302">
-                        <h4>Highest Points</h4>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
+                        <form>
+                            <div class="email-part320">
+                                <!-- <span class="form-description442">E-Mail* </span><input type="text" name="fname" class="email30" placeholder="Enter Your Email">   -->
                             </div>
-                            <a href="#" class="designetion439"> </a>
-                            <p> </p>
-                                
-                        </div>
+                            <div class="question-title39">
+                                <span class="form-description433">Question-Title* </span><input id="title" type="text" name="fname"
+                                    class="question-ttile32" placeholder="Write Your Question Title">
+                            </div>
 
-                        <hr>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div> 
-                            <a href="#" class="designetion439"> </a>
-                            <p> </p>
-                             
-                        </div>
+                            <div class="categori49">
+                                <span class="form-description43305">Category* </span>
+                                <label>
+                                <input id="category" list="browsers" name="myBrowser" class="list-category53" /></label>
+                                <datalist>
+                                    <option value="Front_End Web Developer">
+                                    <option value="Back-End develoer">
+                                    <option value="Andriod Developer">
+                                    <option value="Web Application">
+                                    <option value="System Analyst">
+                                    <option value="Security">
+                                </datalist>
+                            </div>
+                            <div class="details2-239">
+                                <div class="col-md-12 nopadding">
+                                    <textarea id="content" rows="20" cols="105">Input here</textarea>
+                                </div>
+                            </div>
 
-                        <hr>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div> 
-                            <a href="#" class="designetion439"> </a>
-                            <p> </p>
-                            
+                        </form>
+                        <div class="publish-button2389">
+                            <button id="submit" type="button" class="publis1291">Publish your Question</button>
                         </div>
-
-                        <hr>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div> 
-                            <a href="#" class="designetion439"> </a>
-                            <p> </p>
-                           
-                        </div>
-
-                        <hr>
-                        <div class="pints-wrapper">
-                            <div class="left-user3898">
-                                <a href="#"><img src="{{ url_for('static', filename='image/images.png') }}" alt="Image"></a>
-                                <div class="imag-overlay39"> <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a> </div>
-                            </div> 
-                            <a href="#" class="designetion439"> </a>
-                            <p> </p>
-                            
-                        </div>
-                        <hr>
 
                     </div>
-                    <!-- end of Highest points -->      
+
+
+                </div>
+                <!--end of col-md-9 -->
+
+                <!--strart col-md-3 (side bar)-->
+                <aside class="col-md-3 sidebar97239">
+                    <!--highest part-->
+                    <div class="highest-part302">
+                        <h4>Highest Points</h4>
+                        <div id="board"></div>
+                    </div>
+                    <!--end of Highest points -->
                 </aside>
             </div>
         </div>
-    </div>
-    
-<!--    footer -->
- <!--    footer -->
-<section class="footer-part">
-    <div class="container">
-        <div class="row">
-            <!-- <div class="col-md-3"> -->
+    </section>
+
+
+    <!--footer -->
+    <section class="footer-part">
+        <div class="container">
+            <div class="row">
+                <!--<div class="col-md-3"> -->
                 <div class="info-part-one320">
                     <h4>Reference</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Morbi adipiscing gravida odio, sit amet suscipit risus ultrices eu.
                     </p>
                 </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
     <script src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <!-- <script src="{{ url_for('static', filename='js/npm.js') }}"></script> -->
     <script>
         var image = "{{ url_for('static', filename='image/images.png') }}";
     </script>
-    <script src="{{ url_for('static', filename='js/forum.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/post-details.js') }}"></script>
-   	
-
-  
+    <script src="{{ url_for('static', filename='js/pages/ask.js') }}" type="module"></script>
 </body>
 
 </html>
