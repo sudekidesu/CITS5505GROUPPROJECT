@@ -6,18 +6,18 @@ from sqlalchemy import desc
 from werkzeug.security import generate_password_hash
 
 from app import db
-from app import app
+from app.blueprints import main
 from app.forms import LoginForm, RegisterForm, QuestionForm, AnswerForm, CommentForm, PageForm, QalikeForm
 from app.models import User, Question, Answer
 
 
-@app.route('/csrf-token')
+@main.route('/csrf-token')
 def csrf_token():
     token = generate_csrf()
     return jsonify({'csrfToken': token})
 
 
-@app.route('/', methods=['GET', 'POST'])
+@main.route('/', methods=['GET', 'POST'])
 def index():
     if current_user.is_authenticated:
         return render_template('index.html', user=g._login_user)
@@ -26,10 +26,10 @@ def index():
         return render_template('index.html', token=token)
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@main.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
     if request.method == 'GET':
         token = generate_csrf()
         print(token)
@@ -41,15 +41,15 @@ def login():
                 sa.select(User).where(User.username == form.username.data))
             if user is None or not user.check_password(form.password.data):
                 flash('Invalid username or password')
-                return redirect(url_for('login'))
+                return redirect(url_for('main.login'))
             # login_user(user, remember=True)
             login_user(user) # , remember=False)
-            return redirect(url_for('index'))
+            return redirect(url_for('main.index'))
         else:
-            return redirect(url_for("login"))
+            return redirect(url_for("main.login"))
 
 
-@app.route("/register", methods=['GET', 'POST'])
+@main.route("/register", methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
         token = generate_csrf()
@@ -65,18 +65,18 @@ def register():
             user = User(email=email, username=username, password_hash=generate_password_hash(password))
             db.session.add(user)
             db.session.commit()
-            return redirect(url_for("login"))
+            return redirect(url_for("main.login"))
         else:
-            return redirect(url_for("register"))
+            return redirect(url_for("main.register"))
 
 
-@app.route("/logout")
+@main.route("/logout")
 def logout():
     session.clear()
     return redirect("/")
 
 
-@app.route("/qa/public", methods=['GET', 'POST'])
+@main.route("/qa/public", methods=['GET', 'POST'])
 @login_required
 def public_question():
     if request.method == 'GET':
@@ -91,13 +91,13 @@ def public_question():
             question = Question(title=title, category=category, content=content, author=g._login_user)
             db.session.add(question)
             db.session.commit()
-            return redirect(url_for("qa_detail", qa_id=question.id))
+            return redirect(url_for("main.qa_detail", qa_id=question.id))
         else:
             print(form.errors)
-            return redirect(url_for("public_question"))
+            return redirect(url_for("main.public_question"))
 
 
-@app.route("/qa/detail/<qa_id>")
+@main.route("/qa/detail/<qa_id>")
 def qa_detail(qa_id):
     if request.method == 'GET':
         question = Question.query.get(qa_id)
@@ -112,14 +112,14 @@ def qa_detail(qa_id):
             comment = Answer(content=content, answer_id=answer_id, author_id=g._login_user.id)
             db.session.add(comment)
             db.session.commit()
-            return redirect(url_for("qa_detail", qa_id=question_id))
+            return redirect(url_for("main.qa_detail", qa_id=question_id))
         else:
             print(form.errors)
-            return redirect(url_for("qa_detail", qa_id=request.form.get("question_id")))
+            return redirect(url_for("main.qa_detail", qa_id=request.form.get("question_id")))
 
 
 
-@app.post("/answer/public")
+@main.post("/answer/public")
 @login_required
 def public_answer():
     form = AnswerForm(request.form)
@@ -129,13 +129,13 @@ def public_answer():
         answer = Answer(content=content, question_id=question_id, author_id=g._login_user.id)
         db.session.add(answer)
         db.session.commit()
-        return redirect(url_for("qa_detail", qa_id=question_id))
+        return redirect(url_for("main.qa_detail", qa_id=question_id))
     else:
         print(form.errors)
-        return redirect(url_for("qa_detail", qa_id=request.form.get("question_id")))
+        return redirect(url_for("main.qa_detail", qa_id=request.form.get("question_id")))
 
 
-@app.post("/comment/public")
+@main.post("/comment/public")
 @login_required
 def public_comment():
     form = CommentForm(request.form)
@@ -146,13 +146,13 @@ def public_comment():
         comment = Answer(content=content, answer_id=answer_id, author_id=g._login_user.id)
         db.session.add(comment)
         db.session.commit()
-        return redirect(url_for("qa_detail", qa_id=question_id))
+        return redirect(url_for("main.qa_detail", qa_id=question_id))
     else:
         print(form.errors)
-        return redirect(url_for("qa_detail", qa_id=request.form.get("question_id")))
+        return redirect(url_for("main.qa_detail", qa_id=request.form.get("question_id")))
 
 
-@app.route("/search")
+@main.route("/search")
 def search():
     # /search?q=flask
     # /search/<q>
@@ -180,7 +180,7 @@ def search():
     return jsonify(response)
 
 
-@app.route("/recentqa")
+@main.route("/recentqa")
 def recentqa():
     num_dp = 10
     pagination = Question.query.order_by(desc(Question.create_time)).paginate(page=1, per_page=num_dp)
@@ -204,7 +204,7 @@ def recentqa():
     return questions
 
 
-@app.route("/qa/like", methods=['POST'])
+@main.route("/qa/like", methods=['POST'])
 def like():
     form = QalikeForm(request.form)
     if form.validate():
@@ -223,7 +223,7 @@ def like():
         return jsonify({'message': 'Missing \'qa_id\''}), 404
 
 
-@app.route("/qa/dislike/<qa_id>", methods=['POST'])
+@main.route("/qa/dislike/<qa_id>", methods=['POST'])
 def dislike(qa_id):
     question = Question.query.get(qa_id)
     if question:
@@ -256,7 +256,7 @@ def dislike(qa_id):
 #         "current_page": pagination.page
 #     }
 #     return jsonify(response)
-@app.route("/board")
+@main.route("/board")
 def board():
     num_dp = 5
     # 根据 User.likes 字段进行排序
