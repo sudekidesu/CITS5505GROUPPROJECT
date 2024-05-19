@@ -10,4 +10,5 @@ class DeploymentConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///forumDB.db'
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory"
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'  # 使用内存中的 SQLite 数据库
+    WTF_CSRF_ENABLED = False

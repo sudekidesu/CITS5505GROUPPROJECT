@@ -18,5 +18,4 @@ def create_app(config):
     with app.app_context():  # Create an :class:`~flask.ctx.AppContext`.
         db.create_all()
 
-
     return app

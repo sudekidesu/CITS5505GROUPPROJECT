@@ -34,6 +34,7 @@ class Question(db.Model):
     title = db.Column(db.String(100), nullable=False)
     category = db.Column(db.String(100), nullable=False)
     content = db.Column(db.Text, nullable=False)
+    update_time = db.Column(db.DateTime, default=datetime.now)
     create_time = db.Column(db.DateTime, default=datetime.now)
     likes = db.Column(db.Integer, default=0)
 
