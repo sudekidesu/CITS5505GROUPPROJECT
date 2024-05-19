@@ -48,7 +48,6 @@ def login():
             if user is None or not user.check_password(form.password.data):
                 flash('Invalid username or password')
                 return redirect(url_for('main.login'))
-
             login_user(user)
             return redirect(url_for('main.index'))
         else:
