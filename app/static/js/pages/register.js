@@ -10,5 +10,5 @@ document.getElementById('submit').onclick = async () => {
 
   await fetch('/register', { method: 'POST', body })
 
-  // window.location.href = '/login';
+   window.location.href = '/login';
 }

@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Setting the character encoding for the document -->
   <meta charset="UTF-8">
-  <meta name="title" content="Ask online Form">
-  <meta name="description" content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ask ideal for wiki sites, knowledge base sites, support forum sites">
-  <meta name="keywords" content="HTML, CSS, JavaScript,Bootstrap,js,Forum,webstagram ,webdesign ,website ,web ,webdesigner ,webdevelopment">
+  <!-- Title of the webpage -->
+  <title>Ask Online Form</title>
+  <!-- Meta description for SEO -->
+  <meta name="description" content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ideal for wiki sites, knowledge base sites, support forum sites.">
+  <!-- Meta keywords for SEO -->
+  <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, js, Forum, webstagram, webdesign, website, web, webdesigner, webdevelopment">
+  <!-- Meta tag for robots, to control the crawling and indexing of the webpage -->
   <meta name="robots" content="index, nofollow">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!-- Meta tag to specify the language of the document -->
   <meta name="language" content="English">
+  <!-- Link to Google Fonts for the Roboto font -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <!-- Link to Normalize.css to ensure consistent styling across browsers -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <!-- Link to the custom CSS file for login page styling -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/loginstyle.css') }}">
 </head>
 <body>
-
-<div class="modal-wrap">
-  <div class="modal-bodies">
-    <div class="modal-body modal-body-step-1 is-showing">
-      <div class="title">Sign Up</div>
-      <div class="description">Hello there, Register Form</div>
-      <input type="text" id="username" placeholder="Username*" />
-      <input type="email" id="email" placeholder="E-Mail*" />
-      <input type="password" id="password" placeholder="Password*" />
-      <input type="password" id="password_confirm" placeholder="Confirm Password*" />
-      <div class="text-center">
-        <button id="submit" type="submit" class="button">Sign Up</button>
+  <!-- Modal wrapper for the sign-up form -->
+  <div class="modal-wrap">
+    <div class="modal-bodies">
+      <!-- Step 1 of the modal body for sign-up -->
+      <div class="modal-body modal-body-step-1 is-showing">
+        <!-- Title of the sign-up form -->
+        <div class="title">Sign Up</div>
+        <!-- Description under the title -->
+        <div class="description">Hello there, Register Form</div>
+        <!-- Input field for username -->
+        <input type="text" id="username" placeholder="Username*" />
+        <!-- Input field for email -->
+        <input type="email" id="email" placeholder="E-Mail*" />
+        <!-- Input field for password -->
+        <input type="password" id="password" placeholder="Password*" />
+        <!-- Input field for password confirmation -->
+        <input type="password" id="password_confirm" placeholder="Confirm Password*" />
+        <!-- Centered button for submission -->
+        <div class="text-center">
+          <button id="submit" type="submit" class="button">Sign Up</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-<script src="{{ url_for('static', filename='js/pages/register.js') }}" type="module"></script>
+  <!-- Link to jQuery library -->
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <!-- Link to the custom JavaScript file for register functionality -->
+  <script src="{{ url_for('static', filename='js/pages/register.js') }}" type="module"></script>
 </body>
 </html>

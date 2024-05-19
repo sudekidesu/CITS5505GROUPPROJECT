@@ -1,91 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <!-- Set character encoding for the document -->
     <meta charset="utf-8">
+    <!-- Ensure proper rendering and touch zooming on IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Ensure proper scaling on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Define title for the page -->
     <meta name="title" content="Ask online Form">
-    <meta name="description"
-        content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ask ideal for wiki sites, knowledge base sites, support forum sites">
-    <meta name="keywords"
-        content="HTML, CSS, JavaScript,Bootstrap,js,Forum,webstagram ,webdesign ,website ,web ,webdesigner ,webdevelopment">
+    <!-- Define description for the page -->
+    <meta name="description" content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ask ideal for wiki sites, knowledge base sites, support forum sites">
+    <!-- Define keywords for SEO -->
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, js, Forum, webstagram, webdesign, website, web, webdesigner, webdevelopment">
+    <!-- Define robots behavior for SEO -->
     <meta name="robots" content="index, nofollow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Define language of the document -->
     <meta name="language" content="English">
+    <!-- Set title of the document -->
     <title>Ask_question</title>
+    <!-- Link to Bootstrap CSS file -->
     <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+    <!-- Link to custom style CSS file -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+    <!-- Link to custom editor CSS file -->
     <link href="{{ url_for('static', filename='css/editor.css') }}" rel="stylesheet" type="text/css">
-    <!-- <link href="css/animate.css" rel="stylesheet" type="text/css"> -->
+    <!-- Link to Font Awesome CSS file -->
     <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <!-- Link to responsive CSS file -->
     <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" type="text/css">
-
 </head>
-
 <body>
-    <!-- ==========header mega navbar=======-->
+    <!-- Navigation bar -->
     <div class="top-menu-bottom932">
         <nav class="navbar navbar-default">
             <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle
-                            navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
-                            class="icon-bar"></span> </button>
-                    <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo.png') }}"
-                            alt="Logo"></a>
+                    <!-- Button for collapsing the navigation bar on small screens -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Navbar brand logo -->
+                    <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo.png') }}" alt="Logo"></a>
                 </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav"> </ul>
+                    <!-- Navbar links -->
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/ask">Ask Question</a></li>
-                        <li><a href="/login">Login</a></li>
+                        {% if user %}
+                            <li><a href="/qa/public">Ask Question</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                            <li><a>Welcome, {{ user.username }}</a></li>
+                        {% else %}
+                            <li><a href="/login">Login</a></li>
+                        {% endif %}
                     </ul>
                 </div>
-                <!-- /.navbar-collapse -->
             </div>
-            <!-- /.container-fluid -->
         </nav>
     </div>
 
-
-    <section class="header-descriptin329">
-        <div class="container" align="center">
+    <!-- Header section -->
+    <section class="header-description329">
+        <div class="container" style="text-align: center;">
             <h2>Post here!</h2>
         </div>
     </section>
 
-
+    <!-- Main content section -->
     <section class="main-content920">
         <div class="container">
             <div class="row">
+                <!-- Main content area -->
                 <div class="col-md-9">
                     <div class="ask-question-input-part032">
                         <h4>Ask Question</h4>
                         <hr>
-
-
                         <form>
                             <div class="email-part320">
-                                <!-- <span class="form-description442">E-Mail* </span><input type="text" name="fname" class="email30" placeholder="Enter Your Email">   -->
+                                <!-- Removed content for clarity -->
                             </div>
                             <div class="question-title39">
-                                <span class="form-description433">Question-Title* </span><input id="title" type="text" name="fname"
-                                    class="question-ttile32" placeholder="Write Your Question Title">
+                                <span class="form-description433">Question-Title* </span>
+                                <input id="title" type="text" name="fname" class="question-ttile32" placeholder="Write Your Question Title">
                             </div>
-
                             <div class="categori49">
-                                <span class="form-description43305">Category* </span>
                                 <label>
-                                <input id="category" list="browsers" name="myBrowser" class="list-category53" /></label>
-                                <datalist>
+                                    <input type="hidden" id="category" name="myBrowser" class="list-category53">
+                                </label>
+
+                                <datalist id="browsers">
                                     <option value="Front_End Web Developer">
-                                    <option value="Back-End develoer">
-                                    <option value="Andriod Developer">
+                                    <option value="Back-End Developer">
+                                    <option value="Android Developer">
                                     <option value="Web Application">
                                     <option value="System Analyst">
                                     <option value="Security">
@@ -96,113 +106,80 @@
                                     <textarea id="content" rows="20" cols="105">Input here</textarea>
                                 </div>
                             </div>
-
+                            <div class="publish-button2389">
+                                <button id="submit" type="button" class="publis1291">Publish your Question</button>
+                            </div>
                         </form>
-                        <div class="publish-button2389">
-                            <button id="submit" type="button" class="publis1291">Publish your Question</button>
-                        </div>
-
                     </div>
-
-
                 </div>
-                <!--                end of col-md-9 -->
-
-                <!--           strart col-md-3 (side bar)-->
+                <!-- Sidebar section -->
                 <aside class="col-md-3 sidebar97239">
                     <div class="categori-part329">
-                        <h4>Category</h4>
+                        <h4>How to ask a good question</h4>
                         <ul style="color: black; font-weight: bold;">
-                            <li><a href="#">web developer</a></li>
-                            <li><a href="#">Andriod developer</a></li>
-                            <li><a href="#">grapics developer</a></li>
-                            <li><a href="#">web developer</a></li>
+                            <li><a href="#">specify</a></li>
+                            <li><a href="#">simplify</a></li>
+                            <li><a href="#">seek</a></li>
+                            <li><a href="#">summarize</a></li>
                         </ul>
                     </div>
-
-
-                    <!-- <div class="categori-part329">
-                    <h4>Category</h4>
-                    <ul>
-                        <li><a href="#">web developer</a></li>
-                        <li><a href="#">Andriod developer</a></li>
-                        <li><a href="#">grapics developer</a></li>
-                        <li><a href="#">web developer</a></li>     
-                    </ul>
-                </div> -->
-
-
-
-                    <!--              highest part-->
                     <div class="highest-part302">
                         <h4>Highest Points</h4>
                         <div id="board"></div>
                     </div>
-                    <!--               end of Highest points -->
-
-
-                    <!--        start recent post  -->
                     <div class="recent-post3290">
-                        <h4>Recent Post</h4>
+                        <h4>Be respectful</h4>
                         <div class="post-details021">
                             <a href="#">
-                                <h5> </h5>
+                                <h5></h5>
                             </a>
-                            <p> </p>
-                            <small style="color: #848991"> </small>
+                            <p></p>
+                            <small style="color: #848991"></small>
                         </div>
                         <hr>
                         <div class="post-details021">
                             <a href="#">
-                                <h5> </h5>
+                                <h5></h5>
                             </a>
-                            <p> </p>
-                            <small style="color: #848991"> </small>
+                            <p></p>
+                            <small style="color: #848991"></small>
                         </div>
                         <hr>
                         <div class="post-details021">
                             <a href="#">
-                                <h5> </h5>
+                                <h5></h5>
                             </a>
-                            <p> </p>
-                            <small style="color: #848991"> </small>
+                            <p></p>
+                            <small style="color: #848991"></small>
                         </div>
-
-
                     </div>
-                    <!--       end recent post    -->
-
                 </aside>
             </div>
         </div>
     </section>
 
-    <!--    footer -->
-    <!--    footer -->
+    <!-- Footer section -->
     <section class="footer-part">
         <div class="container">
             <div class="row">
-                <!-- <div class="col-md-3"> -->
                 <div class="info-part-one320">
+                    <!-- Reference links -->
                     <h4>Reference</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Morbi adipiscing gravida odio, sit amet suscipit risus ultrices eu.
-                    </p>
+                    <p><a href="https://getbootstrap.com/" target="_blank">bootstrap.css</a></p>
+                    <p><a href="https://fontawesome.com/" target="_blank">font-awesome.min.css</a></p>
+                    <p><a href="https://getbootstrap.com/docs/5.0/layout/grid/" target="_blank">responsive.css</a></p>
+                    <p><a href="https://jquery.com/" target="_blank">jquery.js</a></p>
+                    <p><a href="https://flask.palletsprojects.com/en/3.0.x/tutorial/layout/" target="_blank">Flask Layout</a></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <!-- Include jQuery library -->
     <script src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
+    <!-- Include Bootstrap JavaScript library -->
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <!-- <script src="{{ url_for('static', filename='js/npm.js') }}"></script> -->
-    <script>
-        var image = "{{ url_for('static', filename='image/images.png') }}";
-    </script>
-    <!-- <script src="{{ url_for('static', filename='js/forum.js') }}"></script> -->
-
+    <!-- Include custom ask.js script -->
     <script src="{{ url_for('static', filename='js/pages/ask.js') }}" type="module"></script>
 </body>
-
 </html>

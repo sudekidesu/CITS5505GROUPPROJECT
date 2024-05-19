@@ -1,61 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="Ask online Form">
-    <meta name="description" content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ask ideal for wiki sites, knowledge base sites, support forum sites">
-    <meta name="keywords" content="HTML, CSS, JavaScript,Bootstrap,js,Forum,webstagram ,webdesign ,website ,web ,webdesigner ,webdevelopment">
-    <meta name="robots" content="index, nofollow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="language" content="English">
-    <title>Post</title>
+    <meta charset="utf-8"> <!-- Character encoding for the document -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- For Internet Explorer compatibility mode -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Responsive viewport setting -->
+    <meta name="title" content="Ask online Form"> <!-- Page title -->
+    <meta name="description" content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ask ideal for wiki sites, knowledge base sites, support forum sites"> <!-- Description of the page -->
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, js, Forum, webstagram, webdesign, website, web, webdesigner, webdevelopment"> <!-- Keywords for SEO -->
+    <meta name="robots" content="index, nofollow"> <!-- Robots meta tag for search engines -->
+    <meta name="language" content="English"> <!-- Language of the page -->
+    <title>Post</title> <!-- Title displayed on the browser tab -->
+
+    <!-- Stylesheets -->
     <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
-    <!-- <link href="css/animate.css" rel="stylesheet" type="text/css"> -->
     <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" type="text/css">
 
+    <!-- Add custom CSS here to handle any layout and alignment issues -->
+    <style>
+        .text-center {
+            text-align: center;
+        }
+    </style>
 </head>
-
 <body>
-    <!-- ==========header mega navbar=======-->
+    <!-- Navigation Bar -->
     <div class="top-menu-bottom932">
         <nav class="navbar navbar-default">
             <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                    <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo.png') }}" alt="Logo"></a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="{{ url_for('static', filename='image/logo.png') }}" alt="Logo">
+                    </a>
                 </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav"> </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/ask">Ask Question</a></li>
                         {% if user %}
+                            <li><a href="/qa/public">Ask Question</a></li>
                             <li><a href="/logout">Logout</a></li>
+                            <li><a>Welcome, {{ user.username }}</a></li>
                         {% else %}
                             <li><a href="/login">Login</a></li>
                         {% endif %}
                     </ul>
                 </div>
-                <!-- /.navbar-collapse -->
             </div>
-            <!-- /.container-fluid -->
         </nav>
     </div>
 
-    <section class="header-descriptin329">
-        <div class="container" align="center">
+    <!-- Header Section -->
+    <section class="header-description329">
+        <div class="container text-center"> <!-- Changed align to CSS class text-center -->
             <h3>Post Details</h3>
         </div>
     </section>
 
-
+    <!-- Main Content Section -->
     <section class="main-content920">
         <div class="container">
             <div class="row">
@@ -65,17 +74,19 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="post-title-left129">
-                                        <h3 id="postTitle">{{question_data.title}}</h3> 
+                                        <h3 id="postTitle">{{question_data.title}}</h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="post-details-info1982">
-                            <p id="postContent">{{question_data.content}}</p >
+                            <p id="postContent">{{question_data.content}}</p>
                             <hr>
                             <div class="post-footer29032">
                                 <div class="l-rightside39">
-                                    <button id="likeButton" type="button" class="tolltip-button thumbs-up2" data-toggle="tooltip" data-placement="bottom" title="Like"><i class="fa fa-thumbs-o-up " aria-hidden="true"></i></button>
+                                    <button id="likeButton" type="button" class="tolltip-button thumbs-up2" data-toggle="tooltip" data-placement="bottom" title="Like">
+                                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                    </button>
                                     {{question_data.likes}}
                                 </div>
                             </div>
@@ -85,20 +96,19 @@
                     <div class="comment-list12993">
                         <div class="container">
                             <div class="row">
-                           
                                 <div class="comments-container">
-                                    <ul id="comments-list" class="comments-list">
+                                    <ul class="comments-list"> <!-- Removed duplicate ID -->
                                         {% for item in answers_data %}
                                             <li>
                                                 <div class="comment-main-level">
-                                                    <!-- Avatar -->
-                                                    <div class="comment-avatar"><img src="{{ url_for('static', filename='image/images.png') }}" alt="image"></div>
-                                                    <!-- Contenedor del Comentario -->
+                                                    <div class="comment-avatar">
+                                                        <img src="{{ url_for('static', filename='image/images.png') }}" alt="image">
+                                                    </div>
                                                     <div class="comment-box">
                                                         <div class="comment-head">
                                                             <h6 class="comment-name"><a>{{item.username}}</a></h6>
                                                             <span>
-                                                                <i class="fa fa-clock-o" aria-hidden="true"> January 15 , 2014 at 10:00 pm</i>
+                                                                <i class="fa fa-clock-o" aria-hidden="true"> January 15, 2014 at 10:00 pm</i>
                                                             </span>
                                                             <i class="fa fa-reply"></i>
                                                             <i class="fa fa-heart"></i>
@@ -109,117 +119,60 @@
                                             </li>
                                         {% endfor %}
                                     </ul>
-                        
-                            </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     {% endif %}
 
+                    <!-- Comment Box Section -->
                     <div class="comment289-box">
                         <h3>Leave A Reply</h3>
                         <hr>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="post9320-box">
-                                    <input id="postReplyText" type="text" class="comment-input219882" placeholder="Enter Your Post"> </div>
+                                    <input id="postReplyText" type="text" class="comment-input219882" placeholder="Enter Your Post">
+                                </div>
                                 <button id="postReplyButton" type="button" class="pos393-submit">Post Your Answer</button>
                             </div>
                         </div>
                     </div>
-                    <ul id="comments-list" class="comments-list"> <!-- 这里将动态添加评论 --> </ul>
                 </div>
-                <!--                end of col-md-9 -->
 
-               
-
-                <!--           strart col-md-3 (side bar)-->
+                <!-- Sidebar Section -->
                 <aside class="col-md-3 sidebar97239">
-                    <!-- <div class="status-part3821">
-                        <h4>stats</h4> 
-                        <a href="#"><i class="fa fa-question-circle" aria-hidden="true"> Question(20)</i></a> 
-                        <i class="fa fa-comment" aria-hidden="true"> Answers(50)</i> 
-                    </div> -->
-                    <!-- <div class="categori-part329">
-                        <h4>Category</h4>
-                        <ul>
-                            <li><a href="#">web developer</a></li>
-                            <li><a href="#">Andriod developer</a></li>
-                            <li><a href="#">grapics developer</a></li>
-                            <li><a href="#">web developer</a></li>
-                        </ul>
-                    </div> -->
-
-                    <!--              highest part-->
                     <div class="highest-part302">
                         <h4>Highest Points</h4>
                         <div id="board"></div>
                     </div>
-                    <!--               end of Highest points -->
-
-            
-                    <!--        start recent post  -->
-                    <!-- <div class="recent-post3290">
-                        <h4>Recent Post</h4>
-                        <div class="post-details021"> <a href="#"><h5> </h5></a>
-                            <p> </p> <small style="color: #848991"> </small> </div>
-                        <hr>
-                        <div class="post-details021"> <a href="#"><h5> </h5></a>
-                            <p> </p> <small style="color: #848991"> </small> </div>
-                        <hr>
-                        <div class="post-details021"> <a href="#"><h5> </h5></a>
-                            <p> </p> <small style="color: #848991"> </small> </div>
-                    </div> -->
-                    <!--       end recent post    -->
                 </aside>
             </div>
         </div>
     </section>
-    
-    <!--    footer -->
-    <div class="footer-search">
-        <div class="container">
-            <div class="row">
-                <div id="custom-search-input">
-                    <!-- <div class="input-group col-md-12"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        <input type="text" class="  search-query form-control user-control30" placeholder="Search here...." /> <span class="input-group-btn">
-                                    <button class="btn btn-danger" type="button">
-                                        <span class=" glyphicon glyphicon-search"></span> </button>
-                        </span>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-    </div>
 
+    <!-- Footer Section -->
     <section class="footer-part">
         <div class="container">
             <div class="row">
-                <!-- <div class="col-md-3"> -->
-                    <div class="info-part-one320">
-                        <h4>Reference</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Morbi adipiscing gravida odio, sit amet suscipit risus ultrices eu.
-                        </p>
-                    </div>
+                <div class="info-part-one320">
+                    <h4>Reference</h4>
+                    <p><a href="https://getbootstrap.com/" target="_blank">bootstrap.css</a></p>
+                    <p><a href="https://fontawesome.com/" target="_blank">font-awesome.min.css</a></p>
+                    <p><a href="https://getbootstrap.com/docs/5.0/layout/grid/" target="_blank">responsive.css</a></p>
+                    <p><a href="https://jquery.com/" target="_blank">jquery.js</a></p>
+                    <p><a href="https://flask.palletsprojects.com/en/3.0.x/tutorial/layout/" target="_blank">Flask Layout</a></p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <!-- Scripts -->
     <script src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <!-- <script src="{{ url_for('static', filename='js/npm.js') }}"></script> -->
     <script>
         var image = "{{ url_for('static', filename='image/images.png') }}";
     </script>
-    <!-- <script src="{{ url_for('static', filename='js/forum.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/post-details.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/post-details1.js') }}"></script> -->
-
     <script src="{{ url_for('static', filename='js/pages/post-details.js') }}" type="module"></script>
-
-    
 </body>
-
 </html>

@@ -36,16 +36,5 @@ class AnswerForm(FlaskForm):
     content = StringField(validators=[DataRequired()])
 
 
-class CommentForm(FlaskForm):
-    content = StringField(validators=[DataRequired()])
-    answer_id = IntegerField(validators=[DataRequired()])
-    question_id = IntegerField(validators=[DataRequired()])
-
-
-class PageForm(FlaskForm):
-    page = IntegerField(validators=[DataRequired()])
-    per_page = IntegerField(validators=[DataRequired()])
-
-
 class QalikeForm(FlaskForm):
     question_id = IntegerField(validators=[DataRequired()])

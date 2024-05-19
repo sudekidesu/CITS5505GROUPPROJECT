@@ -1,242 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="title" content="Ask online Form" />
-		<meta
-			name="description"
-			content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ask ideal for wiki sites, knowledge base sites, support forum sites"
-		/>
-		<meta
-			name="keywords"
-			content="HTML, CSS, JavaScript,Bootstrap,js,Forum,webstagram ,webdesign ,website ,web ,webdesigner ,webdevelopment"
-		/>
-		<meta name="robots" content="index, nofollow" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="language" content="English" />
-		<title>UWA IT Forum</title>
-		<link
-			href="{{ url_for('static', filename='css/bootstrap.css') }}"
-			rel="stylesheet"
-			type="text/css"
-		/>
-		<link
-			href="{{ url_for('static', filename='css/style.css') }}"
-			rel="stylesheet"
-			type="text/css"
-		/>
-		<link
-			href="{{ url_for('static', filename='css/font-awesome.min.css') }}"
-			rel="stylesheet"
-			type="text/css"
-		/>
+<head>
+    <!-- Set the character encoding for the document to UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- Set the compatibility mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Set the viewport to scale to device width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Meta tag for the page title -->
+    <meta name="title" content="Ask online Form" />
+    <!-- Meta tag for the page description -->
+    <meta name="description" content="The Ask is a bootstrap design help desk, support forum website template coded and designed with bootstrap Design, Bootstrap, HTML5 and CSS. Ask ideal for wiki sites, knowledge base sites, support forum sites" />
+    <!-- Meta tag for keywords -->
+    <meta name="keywords" content="HTML, CSS, JavaScript,Bootstrap,js,Forum,webstagram ,webdesign ,website ,web ,webdesigner ,webdevelopment" />
+    <!-- Meta tag for robots -->
+    <meta name="robots" content="index, nofollow" />
+    <!-- Meta tag for the language of the document -->
+    <meta name="language" content="English" />
+    <!-- Title of the page -->
+    <title>UWA IT Forum</title>
+    <!-- Link to CSS files -->
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/index.css') }}" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" type="text/css" />
+</head>
 
-		<link
-			rel="stylesheet"
-			href="{{ url_for('static', filename='css/pages/index.css') }}"
-			type="text/css"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
-			type="text/css"
-		/>
-	</head>
+<body>
+    <div class="top-menu-bottom932">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=""><img src="{{ url_for('static', filename='image/logo.png') }}" alt="Logo" /></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <!-- Navigation menu -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/">Home</a></li>
+                        {% if user %}
+                            <li><a href="/qa/public">Ask Question</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                            <li><a>Welcome, {{ user.username }}</a></li>
+                        {% else %}
+                            <li><a href="/login">Login</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
 
-	<body>
-		<!-- ==========header mega navbar=======-->
-		<div class="top-menu-bottom932">
-			<nav class="navbar navbar-default">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button
-							type="button"
-							class="navbar-toggle collapsed"
-							data-toggle="collapse"
-							data-target="#bs-example-navbar-collapse-1"
-							aria-expanded="false"
-						>
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span> <span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href=""
-							><img
-								src="{{ url_for('static', filename='image/logo.png') }}"
-								alt="Logo"
-						/></a>
-					</div>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div
-						class="collapse navbar-collapse"
-						id="bs-example-navbar-collapse-1"
-					>
-						<ul class="nav navbar-nav"></ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="/">Home</a></li>
-							<li><a href="/qa/public">Ask Question</a></li>
-							{% if user %}
-							<li><a href="/logout">Logout</a></li>
-							{% else %}
-							<li><a href="/login">Login</a></li>
-							{% endif %}
-						</ul>
-					</div>
-					<!-- /.navbar-collapse -->
-				</div>
-				<!-- /.container-fluid -->
-			</nav>
-		</div>
+    <section class="welcome-part-one">
+        <div class="container">
+            <div class="welcome-demop102 text-center">
+                <h2>Welcome to our forum website!</h2>
+                <p>
+                    Here you will be able to search for any post that interests you and interact with the person who posted it. In addition, you can also post any questions to ask for help from others. <br />
+                    Hope you can have a good experience here!
+                </p>
+                <!-- Button with JavaScript click event -->
+                <div class="button0239-item">
+                    <button type="button" class="aboutus022" onclick="location.href='/about'">About Us</button>
+                </div>
+                <div class="form-style8292">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-pencil-square" aria-hidden="true"></i></span>
+                        <input id="searchInput" type="text" class="form-control form-control8392" placeholder="Search any post that interests you" />
+                        <span id="searchButton" class="input-group-addon"> Search </span>
+                    </div>
+                </div>
+                <div id="searchResults"></div>
+            </div>
+        </div>
+    </section>
 
-		<!--======= welcome section on top background=====-->
-		<section class="welcome-part-one">
-			<div class="container">
-				<div class="welcome-demop102 text-center">
-					<h2>Welcome to our forum website!</h2>
-					<p>
-						Here you will be able to search for any post that interests you and
-						interact with the person who posted it. In addition, you can also
-						post any questions to ask for help from others. <br />
-						Hope you can have a good experience here!
-					</p>
-					<div class="button0239-item">
-						<a href="/about">
-							<button type="button" class="aboutus022">About Us</button>
-						</a>
-					</div>
-					<div class="form-style8292">
-						<div class="input-group">
-							<span class="input-group-addon"
-								><i class="fa fa-pencil-square" aria-hidden="true"></i
-							></span>
-							<input
-								id="searchInput"
-								type="text"
-								class="form-control form-control8392"
-								placeholder="Search any post that interests you"
-							/>
-							<span id="searchButton" class="input-group-addon"> Search </span>
-						</div>
-					</div>
-					<div id="searchResults"></div>
-				</div>
-			</div>
-		</section>
+    <section class="main-content920">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div id="main">
+                        <input id="tab1" type="radio" name="tabs" checked />
+                        <label for="tab1">Recent Question</label>
+                        <input id="tab3" type="radio" name="tabs" />
+                        <label for="tab3">Recently Answered</label>
+                        <div id="_content_"></div>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination" id="navigation"></ul>
+                        </nav>
+                    </div>
+                </div>
+                <aside class="col-md-3 sidebar97239">
+                    <div class="highest-part302">
+                        <h4>Highest Points</h4>
+                        <div id="board"></div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
 
-		<!-- ======content section/body=====-->
-		<section class="main-content920">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-9">
-						<div id="main">
-							<input id="tab1" type="radio" name="tabs" checked />
-							<label for="tab1">Recent Question</label>
-							<input id="tab3" type="radio" name="tabs" />
-							<label for="tab3">Recently Answered</label>
+<!-- Footer Section -->
+<section class="footer-part">
+    <div class="container">
+        <div class="row">
+            <div class="info-part-one320">
+                <!-- Reference Section -->
+                <h4>Reference</h4>
+                <p><a href="https://getbootstrap.com/" target="_blank">bootstrap.css</a></p>
+                <p><a href="https://fontawesome.com/" target="_blank">font-awesome.min.css</a></p>
+                <p><a href="https://getbootstrap.com/docs/5.0/layout/grid/" target="_blank">responsive.css</a></p>
+                <p><a href="https://jquery.com/" target="_blank">jquery.js</a></p>
+                <p><a href="https://flask.palletsprojects.com/en/3.0.x/tutorial/layout/" target="_blank">Flask Layout</a></p>
+            </div>
+        </div>
+    </div>
+</section>
 
-							<div id="_content_"></div>
-							<nav aria-label="Page navigation">
-								<ul class="pagination" id="navigation"></ul>
-							</nav>
-						</div>
-					</div>
-					<!--end of col-md-9 -->
 
-					<!--strart col-md-3 (side bar)-->
-					<aside class="col-md-3 sidebar97239">
-						<div class="categori-part329">
-							<h4>Category</h4>
-							<ul>
-								<li><a href="#">web developer</a></li>
-								<li><a href="#">Andriod developer</a></li>
-								<li><a href="#">grapics developer</a></li>
-								<li><a href="#">web developer</a></li>
-							</ul>
-						</div>
-
-						<!--              highest part-->
-						<div class="highest-part302">
-							<h4>Highest Points</h4>
-							<div id="board"></div>
-						</div>
-						<!--               end of Highest points -->
-
-						<!--        start recent post  -->
-						<div class="recent-post3290">
-							<h4>Recent Post</h4>
-							<div class="post-details021">
-								<a href="#">
-									<h5></h5>
-								</a>
-								<p></p>
-								<small style="color: #848991"> </small>
-							</div>
-							<hr />
-							<div class="post-details021">
-								<a href="#">
-									<h5></h5>
-								</a>
-								<p></p>
-								<small style="color: #848991"> </small>
-							</div>
-							<hr />
-							<div class="post-details021">
-								<a href="#">
-									<h5></h5>
-								</a>
-								<p></p>
-								<small style="color: #848991"> </small>
-							</div>
-						</div>
-						<!--       end recent post    -->
-					</aside>
-				</div>
-			</div>
-		</section>
-
-		<!--    footer -->
-
-		<section class="footer-part">
-			<div class="container">
-				<div class="row">
-					<!-- <div class="col-md-3"> -->
-					<div class="info-part-one320">
-						<h4>Reference</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-							adipiscing gravida odio, sit amet suscipit risus ultrices eu.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-		<script src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-		<!-- <script src="{{ url_for('static', filename='js/npm.js') }}"></script> -->
-		<script>
-			var image = "{{ url_for('static', filename='image/images.png') }}";
-		</script>
-		<!-- <script src="{{ url_for('static', filename='js/forum.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/post-details.js') }}"></script> -->
-		<script
-			src="{{ url_for('static', filename='js/pages/index.js') }}"
-			type="module"
-		></script>
-
-		<script src="https://unpkg.com/vue@2/dist/vue.js"></script>
-		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-		<script>
-			new Vue({
-				el: "#app",
-				data: function () {
-					return { visible: false };
-				},
-			});
-		</script>
-	</body>
+    <!-- Include jQuery -->
+    <script src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
+    <!-- Include Bootstrap JavaScript -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <!-- JavaScript to set the image variable -->
+    <script>
+        var image = "{{ url_for('static', filename='image/images.png') }}";
+    </script>
+    <!-- Include the main JavaScript file for the page -->
+    <script src="{{ url_for('static', filename='js/pages/index.js') }}" type="module"></script>
+    <!-- Include Vue.js -->
+    <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+    <!-- Include Element UI library -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <!-- Initialize Vue instance -->
+    <script>
+        new Vue({
+            el: "#app",
+            data: function () {
+                return { visible: false };
+            },
+        });
+    </script>
+</body>
 </html>

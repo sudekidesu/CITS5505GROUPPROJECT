@@ -10,5 +10,4 @@ document.getElementById('submit').onclick = async () => {
 
   await fetch('/login', { method: 'POST', body })
 
-  // window.location.href = '/';
-}
+  window.location.href = '/';}

@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Setting the character encoding for the document -->
   <meta charset="UTF-8">
-  <!-- Other meta tags -->
+  <!-- Title of the webpage -->
+  <title>Login Page</title>
+  <!-- Link to Google Fonts for the Roboto font -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <!-- Link to Normalize.css to ensure consistent styling across browsers -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <!-- Link to the custom CSS file for login page styling -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/loginstyle.css') }}">
 </head>
 <body>
-<div class="modal-wrap">
-  <div class="modal-bodies">
-    <div class="modal-body modal-body-step-1 is-showing">
-      <div class="title">Log In</div>
-      <div class="description">Hello there, Log In</div>
-      <input type="username" id="username" placeholder="Username" />
-      <input type="password" id="password" placeholder="Password" />
-      <div class="text-center">
-        <button id="submit" class="button">LOG IN</button>
-        <a href="/register"><div class="button">Create an account</div></a>
+  <!-- Modal wrapper for the login form -->
+  <div class="modal-wrap">
+    <div class="modal-bodies">
+      <!-- Step 1 of the modal body for login -->
+      <div class="modal-body modal-body-step-1 is-showing">
+        <!-- Title of the login form -->
+        <div class="title">Log In</div>
+        <!-- Description under the title -->
+        <div class="description">Hello there, Log In</div>
+        <!-- Input field for username -->
+        <input type="text" id="username" placeholder="Username" />
+        <!-- Input field for password -->
+        <input type="password" id="password" placeholder="Password" />
+        <!-- Centered buttons for submission and account creation -->
+        <div class="text-center">
+          <!-- Submit button for login -->
+          <button id="submit" class="button">LOG IN</button>
+          <!-- Link to the registration page with a button style -->
+          <a href="/register"><div class="button">Create an account</div></a>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="{{ url_for('static', filename='js/pages/login.js') }}" type="module"></script>
+  <!-- Link to jQuery library -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <!-- Link to the custom JavaScript file for login functionality -->
+  <script src="{{ url_for('static', filename='js/pages/login.js') }}" type="module"></script>
 </body>
 </html>

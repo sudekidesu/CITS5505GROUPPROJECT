@@ -8,7 +8,9 @@ submit.addEventListener('click', async () => {
     title: document.getElementById('title').value,
     content: document.getElementById('content').value,
     category: document.getElementById('category').value,
-  })
+  });
+    window.location.href = "/";
+
 })
 
 window.onload = renderBoard;

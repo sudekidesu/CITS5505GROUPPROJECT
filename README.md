@@ -38,6 +38,17 @@ The purpose of the website: On our website, users can post any questions they wa
 
 ## How to Run the Tests for the Application
 
+1. Assuming that coverage has been installed in the virtual environment.
+2. Run the tests and collect coverage data with the following command:
+
+   coverage run -m unittest test/unit.py
+   coverage run -m unittest test/selenium_test.py
+
+3. Generate a coverage report in the terminal:
+   coverage report
+4. For a more detailed report, generate an HTML coverage report:
+   coverage html
+
 ## Page list
 
 1. Firstly, you need to click login button in home page.
